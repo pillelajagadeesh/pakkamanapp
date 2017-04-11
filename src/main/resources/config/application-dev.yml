@@ -1,0 +1,65 @@
+# ===================================================================
+# Spring Boot configuration for the "dev" profile.
+#
+# This configuration overrides the application.yml file.
+# ===================================================================
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+spring:
+   profiles:
+       active: dev
+   devtools:
+       restart:
+           enabled: true
+       livereload:
+           enabled: false # we use Grunt + BrowserSync for livereload
+   data:
+       mongodb:
+           uri: mongodb://mistminds:bangalore100@ds027744.mlab.com:27744/reachout_release
+           host: ds027744.mlab.com
+           port: 27744
+           database: reachout_release
+           userName: mistminds
+           password: bangalore100
+   mail:
+        host: ds027744.mlab.com
+   messages:
+       cache-seconds: 1	
+   thymeleaf:
+       cache: false
+       view-names: thymeleaf/*
+
+liquibase:
+   contexts: dev
+
+server:
+   port: 8078
+   context-path: /reachout
+
+# ===================================================================
+# JHipster specific properties
+# ===================================================================
+
+jhipster:
+   cache: # Hibernate 2nd level cache, used by CacheConfiguration
+       timeToLiveSeconds: 3600
+       hazelcast:
+           backupCount: 1
+   mail: # specific JHipster mail property, for standard properties see MailProperties
+       from: reachoutapi@gmail.com
+   metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
+       jmx.enabled: true
+       spark:
+           enabled: false
+           host: ds027744.mlab.com
+           port: 9999
+       graphite:
+           enabled: false
+           host: ds027744.mlab.com
+           port: 2003
+           prefix: reachout

@@ -1,0 +1,84 @@
+
+<style>
+.offensiveTrue{
+	background-color: #E45454 !important;
+}
+
+</style>
+
+<div>
+    <h2 translate="reachoutApp.consumerFeedback.home.title">ConsumerFeedbacks</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="consumerFeedback.new" style="background-color: #07079E;margin-left: -23%;">
+                    <span class="glyphicon glyphicon-flash" style="color: #F5F5F5;"></span> <span translate="reachoutApp.consumerFeedback.home.createLabel" style="color: #F5F5F5;">Create a new ConsumerFeedback</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="reachoutApp.consumerFeedback.comment">Comment</span></th>
+                    <th><span translate="reachoutApp.consumerFeedback.likeOrDislike">LikeOrDislike</span></th>
+                    <th><span translate="reachoutApp.consumerFeedback.notificationId">NotificationId</span></th>
+                    <th><span translate="reachoutApp.consumerFeedback.consumerId">ConsumerId</span></th>
+                     <th><span translate="">Offensive</span></th>
+                      <th></th>
+                    <th><span translate="Action" style="margin-left: 114px;">Action</span></th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="consumerFeedback in filtered =(consumerFeedbacks | offset: currentPage*itemsPerPage | limitTo: itemsPerPage)|orderBy:sortType:sortReverse track by consumerFeedback.id" ng-class="{ offensiveTrue: consumerFeedback.offensive == 'true' }">
+                    <td><a ui-sref="consumerFeedback.detail({id:consumerFeedback.id})">{{consumerFeedback.id}}</a></td>
+                    <td>{{consumerFeedback.comment}}</td>
+                    <td>{{consumerFeedback.likeOrDislike}}</td>
+                    <td>{{consumerFeedback.notificationId}}</td>
+                    <td>{{consumerFeedback.consumerId}}</td>
+                    <td>{{consumerFeedback.offensive}}</td>
+                    <td></td>
+                    <td>
+                        <button type="submit"
+                               ui-sref="consumerFeedback.detail({id:consumerFeedback.id})"
+                               class="btn btn-primary btn-sm" style="background-color: #07079E;">
+                           <span class="glyphicon glyphicon-eye-open" style="color: #F5F5F5;"></span>&nbsp;<span translate="entity.action.view" style="color: #F5F5F5;"> View</span>
+                       </button>
+                       <button type="submit"
+                               ui-sref="consumerFeedback.edit({id:consumerFeedback.id})"
+                               class="btn btn-primary btn-sm" style="background-color: #07079E;">
+                           <span class="glyphicon glyphicon-pencil" style="color: #F5F5F5;"></span>&nbsp;<span translate="entity.action.edit" style="color: #F5F5F5;"> Edit</span>
+                       </button>
+                       <button type="submit"
+                               ui-sref="consumerFeedback.delete({id:consumerFeedback.id})"
+                               class="btn btn-primary btn-sm" style="background-color: #07079E;">
+                           <span class="glyphicon glyphicon-trash" style="color: #F5F5F5;"></span>&nbsp;<span translate="entity.action.delete" style="color: #F5F5F5;"> Delete</span>
+                       </button>
+
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+     <tfoot>
+		<td colspan="3">
+		<div class="pagination">
+			<ul class="pagination">
+				<li ng-class="DisablePrevPage()"><a href ng-click="prevPage()">
+						<< Prev</a></li>
+				<li ng-repeat="n in range()" ng-class="{active: n == currentPage}"
+					ng-click="setPage(n)"><a href="">{{n+1}}</a></li>
+				<li ng-class="DisableNextPage()"><a href ng-click="nextPage()">Next
+						>></a></li>
+			</ul>
+
+		</div>
+	</td>
+	</tfoot>
+</div>

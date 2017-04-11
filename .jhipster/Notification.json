@@ -1,0 +1,108 @@
+{
+  "relationships": [],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "categery",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "validFrom",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "validTo",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "secureUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "expieryDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldId": 8,
+      "fieldName": "delivered",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 9,
+      "fieldName": "active",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldId": 10,
+      "fieldName": "created",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldId": 11,
+      "fieldName": "updated",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldId": 12,
+      "fieldName": "offensive",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 13,
+      "fieldName": "publicId",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 14,
+      "fieldName": "url",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 15,
+      "fieldName": "consumerId",
+      "fieldType": "String"
+    }
+    {
+      "fieldId": 16,
+      "fieldName": "radius",
+      "fieldType": "String"
+    }
+    {
+      "fieldId": 17,
+      "fieldName": "image",
+      "fieldType": "String"
+    }
+    {
+      "fieldId": 18,
+      "fieldName": "mrpPrice",
+      "fieldType": "double"
+    }
+    {
+      "fieldId": 19,
+      "fieldName": "offerPrice",
+      "fieldType": "double"
+    }
+    {
+      "fieldId": 20,
+      "fieldName": "hotLink",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160105112820",
+  "dto": "no",
+  "pagination": "no"
+}

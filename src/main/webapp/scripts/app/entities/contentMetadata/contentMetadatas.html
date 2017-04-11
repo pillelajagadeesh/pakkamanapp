@@ -1,0 +1,81 @@
+<div>
+    <h2 translate="reachoutApp.contentMetadata.home.title">ContentMetadatas</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="contentMetadata.new" style="background-color: #07079E;margin-left: -23%;">
+                    <span class="glyphicon glyphicon-flash" style="color: #F5F5F5;"></span> <span translate="reachoutApp.contentMetadata.home.createLabel" style="color: #F5F5F5;">Create a new Cloudinary</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="reachoutApp.contentMetadata.signature">Signature</span></th>
+                    <th><span translate="reachoutApp.contentMetadata.format">Format</span></th>
+                    <th><span translate="reachoutApp.contentMetadata.created">Created</span></th>
+                    <th><span translate="reachoutApp.contentMetadata.type">Type</span></th>
+                    <th><span translate="reachoutApp.contentMetadata.imageVersion">Image Version</span></th>
+                    <th><span translate="reachoutApp.contentMetadata.url">Url</span></th>
+                    <th><span translate="reachoutApp.contentMetadata.tags">Tags</span></th>
+                    <th><span translate="reachoutApp.contentMetadata.bytes">Bytes</span></th>
+                    <th><span translate="reachoutApp.contentMetadata.width">Width</span></th>
+                    <th><span translate="reachoutApp.contentMetadata.height">Height</span></th>
+                    <th><span translate="Action" style="margin-left: 39px;">Action</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="contentmetadata in filtered =(contentmetadatas | offset: currentPage*itemsPerPage | limitTo: itemsPerPage)|  orderBy:sortType:sortReverse  track by contentmetadata.id">
+                    <td><a ui-sref="contentMetadata.detail({id:contentmetadata.id})">{{contentmetadata.id}}</a></td>
+                    <td>{{contentmetadata.signature}}</td>
+                    <td>{{contentmetadata.format}}</td>
+                    <td>{{contentmetadata.created | date:'medium'}}</td>
+                    <td>{{contentmetadata.type}}</td>
+                    <td>{{contentmetadata.imageVersion}}</td>
+                    <td>{{contentmetadata.url}}</td>
+                    <td>{{contentmetadata.tags}}</td>
+                    <td>{{contentmetadata.bytes}}</td>
+                    <td>{{contentmetadata.width}}</td>
+                    <td>{{contentmetadata.height}}</td>
+                    <td>
+                        <button type="submit"
+                               ui-sref="contentMetadata.detail({id:contentMetadata.id})"
+                               class="btn btn-primary btn-sm" style="background-color: #07079E;">
+                           <span class="glyphicon glyphicon-eye-open" style="color: #F5F5F5;"></span>&nbsp;<span translate="entity.action.view" style="color: #F5F5F5;"> View</span>
+                       </button>
+                       <button type="submit"
+                               ui-sref="contentMetadata.edit({id:contentMetadata.id})"
+                               class="btn btn-primary btn-sm" style="background-color: #07079E;">
+                           <span class="glyphicon glyphicon-pencil" style="color: #F5F5F5;"></span>&nbsp;<span translate="entity.action.edit" style="color: #F5F5F5;"> Edit</span>
+                       </button>
+                       <button type="submit"
+                               ui-sref="contentMetadata.delete({id:contentMetadata.id})"
+                               class="btn btn-primary btn-sm" style="background-color: #07079E;">
+                           <span class="glyphicon glyphicon-ban-circle" style="color: #F5F5F5;"></span>&nbsp;<span translate="entity.action.delete" style="color: #F5F5F5;"> Delete</span>
+                       </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <tfoot>
+		<td colspan="3">
+			<div class="pagination"padding-left: 238px;>
+				<ul class="pagination">
+					<li ng-class="prevPageDisabled()"><a href
+						ng-click="prevPage()">Prev</a></li>
+					<li ng-repeat="n in range()" ng-class="{active: n == currentPage}"
+						ng-click="setPage(n)"><a href="">{{n+1}}</a></li>
+					<li ng-class="nextPageDisabled()"><a href
+						ng-click="nextPage()">Next</a></li>
+				</ul>
+			</div>
+		</td>
+	</tfoot>
+</div>

@@ -1,0 +1,24 @@
+{
+    "reachoutApp": {
+        "pakkaApplicationSettings" : {
+            "home": {
+                "title": "Pakka Application Settings",
+                "createLabel": "Create a new Pakka Application Settings",
+                "createOrEditLabel": "Create or edit a Pakka Application Settings",
+                "search": "Search for Pakka Application Settings"
+            },
+            "created": "A new Pakka Application Settings is created with identifier {{ param }}",
+            "updated": "A Pakka Application Settings is updated with identifier {{ param }}",
+            "deleted": "A Pakka Application Settings is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Pakka Application Settings {{ id }}?"
+            },
+            "detail": {
+                "title": "Pakka Application Settings"
+            },
+            "name": "Name",
+            "description": "Description",
+            "value": "Value"
+        }
+    }
+}

@@ -1,0 +1,177 @@
+<style>
+.activeTrue {
+	background-color: #BED5B3 !important;
+}
+
+.activeFalse {
+	background-color: #DAD097 !important;
+}
+
+.activecreate {
+	background-color: #DAD097 !important;
+}
+
+.verified {
+	background-color: #F39090 !important;
+}
+
+.emailid {
+	padding-right: 32px !important;
+}
+
+.consumertrue {
+	display: none
+}
+
+.consumerfalse {
+	display: show
+}
+
+.providerfalse {
+	display: none
+}
+
+.providertrue {
+	display: show
+}
+</style>
+
+<div>
+	<h2 translate="reachoutApp.consumer.home.title">Consumers</h2>
+	<jh-alert></jh-alert>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<button class="btn btn-primary" ui-sref="consumer.new"
+					style="background-color: #07079E; margin-left: -19%;">
+					<span class="glyphicon glyphicon-plus-sign" style="color: #F5F5F5"></span>
+					<span translate="reachoutApp.consumer.home.createLabel"
+						style="color: #F5F5F5">Create a new Consumer</span>
+				</button>
+				<th><select  ng-model="consumer.active" style="margin-left: 223%; padding-top: 5px;padding-right: 9%;position: absolute; margin-top: 4%;">
+							<option value="">Active</option>
+							<option value="true">true</option>
+							<option value="false">false</option>
+					</select></th>
+			</div>
+		</div>
+	</div>
+	<form>
+		<div class="form-group">
+			<div class="input-group">
+				<div class="input-group-addon">
+					<i class="fa fa-search"></i>
+				</div>
+				<input type="text" class="form-control"
+					placeholder="Custom Filter......" ng-model="search.mobile"
+					style="margin-left: -2%;background-color:azure">
+			</div>
+		</div>
+	</form>
+	<div class="table-responsive">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<!-- <th><span translate="global.field.id">ID</span></th> -->
+					<th><span translate="image">Image</span></th>
+					<th><span translate="reachoutApp.consumer.name">Name</span></th>
+					<th><span translate="reachoutApp.consumer.mobile">Mobile</span></th>
+					<th><span translate="reachoutApp.consumer.email">Email</span></th>
+					<th><span translate="reachoutApp.consumer.otp">Otp</span></th>
+					<th><span translate="reachoutApp.consumer.status">Status</span></th>
+					<th></th>
+					<th></th>
+					<!--  <th><span translate="reachoutApp.consumer.otpCount">OtpCount</span></th> -->
+					<!--  <th><span translate="reachoutApp.consumer.created">Created</span></th> -->
+					<!--   <th><span translate="reachoutApp.consumer.updated">Updated</span></th> -->
+					
+					<th><span translate="Action"
+						style="float: right; margin-right: -104%;">Action</span></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr
+					ng-repeat="consumer in filtered=(consumers | offset: currentPage*itemsPerPage | limitTo: itemsPerPage ) |filter:search | filter:consumer track by consumer.id"
+					ng-class="{activeTrue: consumer.active == true, activeFalse: consumer.active == false,verified:consumer.active != true && consumer.status == 'Verified success'}">
+					<!--  <td><a ui-sref="consumer.detail({id:consumer.id})">{{consumer.id}}</a></td> -->
+					<!--   <td ng-class="{consumerfalse: consumer.provider!= null,consumertrue: consumer.provider== null}"> 
+                              <img src="{{consumer.provider.url}}"  onError="this.src='https://pbs.twimg.com/media/B13Y7o9CIAA8MeC.jpg'"  style="width:50px;height:50px;" />
+                              </td>  -->
+                              <td>
+					<div id="thumbwrap">
+                            <a class="thumb" ng-href="{{consumer.url}}" target="_Blank">
+
+                                <img src="{{consumer.url}}" alt="image"
+                                style="width: 50px; height: 70px; margin-top: -112%; margin-left: -10%;"
+                                onError="this.src='http://www.personal.psu.edu/jul229/mini.jpg'"
+                                alt="image" style="width: 50px; height: 70px"> <span><img
+                                    src="http://www.personal.psu.edu/jul229/mini.jpg" alt="image"
+                                    style="width: 200px; height: 220px; margin-left: 25%; margin-top: -80%;"></span>
+
+                                <span><img src="{{consumer.url}}" alt="image"
+                                    style="width: 200px; height: 220px; margin-left: 25%; margin-top: -80%;"></span>
+                            </a>
+
+                        </div>
+                        </td>
+					<td>{{consumer.name}}</td>
+					<td>{{consumer.mobile}}</td>
+					<td><span ng-class="emailid">{{consumer.email}}</span></td>
+					<td>{{consumer.otp}}</td>
+					<td>{{consumer.status}}</td>
+					<td></td>
+					<!-- <td>{{consumer.otpCount}}</td> -->
+					<!--  <td>{{consumer.created | date:'medium'}}</td> -->
+					<!--  <td>{{consumer.updated | date:'medium'}}</td> -->
+					<td></td>
+					<td>
+						<button type="submit"
+							ng-click="active(consumer.id,consumer.active)"
+							class="btn btn-primary btn-sm"
+							style="background-color: #07079E; height:30px;width:120px;color: #F5F5F5; position: initial; margin-top: 42px !important; margin-left: 106%; padding-left: 1%; padding-right: 4%;">
+							<span class="glyphicon glyphicon-user" style="color: #F5F5F5;"></span>&nbsp;<span>
+								{{consumer.active == true ? 'suspend' : 'activate'}}</span>
+						</button>
+					</td>
+					<td>
+						<button type="submit" ui-sref="consumer.detail({id:consumer.id})"
+							class="btn btn-primary btn-sm" style="background-color: #07079E;height:30px;width:120px">
+							<span class="glyphicon glyphicon-eye-open"
+								style="color: #F5F5F5;"></span>&nbsp;<span
+								translate="entity.action.view" style="color: #F5F5F5;">
+								View</span>
+						</button>
+						<button type="submit" ui-sref="consumer.edit({id:consumer.id})"
+							class="btn btn-primary btn-sm" style="background-color: #07079E;height:30px;width:120px">
+							<span class="glyphicon glyphicon-pencil" style="color: #F5F5F5;"></span>&nbsp;<span
+								translate="entity.action.edit" style="color: #F5F5F5;">
+								Edit</span>
+						</button>
+						<button type="submit" ui-sref="consumer.delete({id:consumer.id})"
+							class="btn btn-primary btn-sm"
+							style="background-color: #07079E; margin-bottom: -64px;height:30px;width:120px; margin-left: -124px; padding-left: 2%; padding-right: 5%;">
+							<span class="glyphicon glyphicon-trash" style="color: #F5F5F5;"></span>&nbsp;<span
+								translate="entity.action.delete" style="color: #F5F5F5;">
+								Delete</span>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<tfoot>
+		<td colspan="3">
+		<div class="pagination">
+			<ul class="pagination">
+				<li ng-class="DisablePrevPage()"><a href ng-click="prevPage()">
+						<< Prev</a></li>
+				<li ng-repeat="n in range()" ng-class="{active: n == currentPage}"
+					ng-click="setPage(n)"><a href="">{{n+1}}</a></li>
+				<li ng-class="DisableNextPage()"><a href ng-click="nextPage()">Next
+						>></a></li>
+			</ul>
+
+		</div>
+	</td>
+	</tfoot>
+</div>

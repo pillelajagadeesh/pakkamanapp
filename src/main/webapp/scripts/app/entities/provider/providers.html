@@ -1,0 +1,220 @@
+<style>
+.activeTrue {
+	background-color: #BED5B3 !important;
+}
+
+.activeFalse {
+	background-color: #DAD097 !important;
+}
+
+.activecreate {
+	background-color: #DAD097 !important;
+}
+
+.verified {
+	background-color: #E45454 !important;
+}
+
+.emailid {
+	padding-right: 32px !important;
+}
+
+.consumertrue {
+	display: none
+}
+
+.consumerfalse {
+	display: none
+}
+
+.description {
+	padding-right: 32px !important;
+}
+</style>
+
+<div>
+	<h2 translate="Providers">Providers</h2>
+	<jh-alert></jh-alert>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<button class="btn btn-primary" ui-sref="provider.new"
+					style="background-color: #07079E; margin-left: -19%;">
+					<span class="glyphicon glyphicon-plus-sign" style="color: #F5F5F5"></span>
+					<span translate="CREATE A NEW PROVIDER" style="color: #F5F5F5">Create
+						a new provider</span>
+				</button>
+				<th><select  ng-model="provider.active" style="margin-left: 223%; padding-top: 5px;padding-right: 9%;position: absolute; margin-top: 4%;">
+				<option value="">Active</option>
+				<option value="true">true</option>
+				<option value="false">false</option>
+		</select></th>
+			</div>
+		</div>
+	</div>
+	<form>
+		
+		<div class="form-group">
+			<div class="input-group">
+				<div class="input-group-addon">
+					<i class="fa fa-search"></i>
+				</div>
+				<input type="text" class="form-control"
+					placeholder="Custom Filter......" ng-model="search"
+					style="margin-left: -2%; background-color: azure">
+			</div>
+		</div>
+	</form>
+	<div class="table-responsive">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<!-- <th><span translate="global.field.id">ID</span></th> -->
+					<th><span translate="Image">Image</span></th>
+					<th><span translate="Name">Name</span></th>
+					<th><span translate="Mobile">Mobile</span></th>
+					<th><span translate="Email">Email</span></th>
+					<th><span translate="Address">Address</span></th>
+					<th><span translate="Promo Credits">Promo Credits</span></th>
+					<th><span translate="Free Credits">Free Credits</span></th>
+					<th><span translate="Wallet Credits">Wallet Credits</span></th>
+					<!-- <th><span translate="reachoutApp.consumer.status">Status</span></th> -->
+
+					<!--  <th><span translate="reachoutApp.consumer.otpCount">OtpCount</span></th> -->
+					<!--  <th><span translate="reachoutApp.consumer.created">Created</span></th> -->
+					<!--   <th><span translate="reachoutApp.consumer.updated">Updated</span></th> -->
+
+					<th><span translate="Action" style="margin-left: 60px;">Action</span></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr
+					ng-repeat="provider in filtered=(providers | offset: currentPage*itemsPerPage | limitTo: itemsPerPage ) |filter:search | filter:provider track by provider.id"
+					ng-class="{activeTrue: provider.active == true, activeFalse: provider.active == false,verified:provider.active != true && provider.status == 'Verified success'}">
+
+
+
+
+					<!--  <td><a ui-sref="consumer.detail({id:consumer.id})">{{consumer.id}}</a></td> -->
+					<!--   <td ng-class="{consumerfalse: consumer.provider!= null,consumertrue: consumer.provider== null}"> 
+                              <img src="{{consumer.provider.url}}"  onError="this.src='https://pbs.twimg.com/media/B13Y7o9CIAA8MeC.jpg'"  style="width:50px;height:50px;" />
+                              </td>  -->
+					<td>
+						<div id="thumbwrap">
+                            <a class="thumb" ng-href="{{provider.imageUrl}}" target="_Blank">
+
+                                <img src="{{provider.imageUrl}}" alt="image"
+                                style="width: 50px; height: 80px; margin-top: -112%; margin-left: -10%;"
+                                onError="this.src='http://www.personal.psu.edu/jul229/mini.jpg'"
+                                alt="image" style="width: 50px; height: 80px"> <span><img
+                                    src="http://www.personal.psu.edu/jul229/mini.jpg" alt="image"
+                                    style="width: 200px; height: 220px; margin-left: 25%; margin-top: -80%;"></span>
+
+                                <span><img src="{{provider.imageUrl}}" alt="image"
+                                    style="width: 200px; height: 220px; margin-left: 25%; margin-top: -80%;"></span>
+                            </a>
+
+                        </div> <!-- <img src="{{provider.url}}"  onError="this.src='https://pbs.twimg.com/media/B13Y7o9CIAA8MeC.jpg'"  style="width:50px;height:50px;" /> -->
+					</td>
+					<td>
+					<span ng-class="description"
+						style="display: inline-block; width: 73px;">{{provider.name
+							| limitTo :100}}</span></td>
+					<td>{{provider.mobile}}</td>
+					<td><span ng-class="emailid">{{provider.email}}</span></td>
+					<!-- <td>{{consumer.otp}}</td> -->
+					<td><span ng-class="description"
+						style="display: inline-block; width: 200px;">{{provider.address
+							| limitTo :100}}</span></td>
+
+					<!-- <td>{{consumer.otpCount}}</td> -->
+					<!--  <td>{{consumer.created | date:'medium'}}</td> -->
+					<!--  <td>{{consumer.updated | date:'medium'}}</td> -->
+					<td><input type="checkbox"
+						ui-sref="provider.createpromo({id:provider.id,promo:provider.eleigible_for_promo_credit})"
+						ng-checked="provider.eleigible_for_promo_credit==true"
+						ng-disabled="provider.eleigible_for_promo_credit==true"
+						></input>
+					</td>
+
+					<td style="padding-left: 1%;">{{provider.monthly_free_credits}}</td>
+					<td style="padding-left: 1%;">{{provider.wallet_credits}}</td>
+
+
+					<!--  <td>
+                    	<button type="submit" 
+                                ng-click="active(consumer.id,consumer.active)"
+                                class="btn btn-primary btn-sm" style="background-color: #07079E;color: #F5F5F5;position: relative;margin-left: 112% !important;padding-left: 1%; padding-right: 12%;">
+                            <span class="glyphicon glyphicon-user" style="color: #F5F5F5;"></span>&nbsp;<span> {{provider.active == true ? 'suspend' : 'activate'}}</span>
+                        </button>
+                    </td> -->
+					<td>
+						<div>
+							<button type="submit"
+								ui-sref="consumer.view({id:provider.consumerId})"
+								class="btn btn-primary btn-sm"
+								style="background-color: #07079E; margin-left: 4%">
+								<!-- margin-left: -133px; -->
+								<span class="glyphicon glyphicon-user" style="color: #F5F5F5;"></span>&nbsp;<span
+									translate="View Consumer" style="color: #F5F5F5;"> View
+									Consumer </span>
+							</button>
+						</div>
+
+						<div>
+							<button type="submit"
+								ui-sref="provider.detail({id:provider.consumerId})"
+								class="btn btn-primary btn-sm"
+								style="background-color: #07079E;">
+								<!-- margin-left: -133px; -->
+								<span class="glyphicon glyphicon-eye-open"
+									style="color: #F5F5F5;"></span>&nbsp;<span translate="View"
+									style="color: #F5F5F5;">View</span>
+							</button>
+
+							<button type="submit"
+								ui-sref="provider.edit({id:provider.consumerId})"
+								class="btn btn-primary btn-sm"
+								style="background-color: #07079E;">
+								<!-- margin-left: 29px; -->
+								<span class="glyphicon glyphicon-pencil" style="color: #F5F5F5;"></span>&nbsp;<span
+									translate="Edit" style="color: #F5F5F5;"> Edit</span>
+
+
+							</button>
+							<div>
+								<button type="submit"
+									ng-click="active(provider.id,provider.active)"
+									class="btn btn-primary btn-sm"
+									style="background-color: #07079E; color: #F5F5F5; margin-left: 15%">
+									<span class="glyphicon glyphicon-user" style="color: #F5F5F5;"></span>&nbsp;<span>
+										{{provider.active == true ? 'suspend' : 'activate'}}</span>
+								</button>
+							</div>
+						</div> <!--  <button type="submit"
+                                ui-sref="provider.delete({id:consumer.id})"
+                                class="btn btn-danger btn-sm"  style="background-color: #CCABAB;margin-bottom: -64px;margin-left: -87px;padding-left: 2%;padding-right: 5%;">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button> -->
+
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<tfoot>
+		<td colspan="3">
+		<div class="pagination">
+			<ul class="pagination">
+				<li ng-class="DisablePrevPage()"><a href ng-click="prevPage()">
+						<< Prev</a></li>
+				<li ng-repeat="n in range()" ng-class="{active: n == currentPage}"
+					ng-click="setPage(n)"><a href="">{{n+1}}</a></li>
+				<li ng-class="DisableNextPage()"><a href ng-click="nextPage()">Next
+						>></a></li>
+			</ul>
+
+		</div>
+	</td>
+	</tfoot>
+</div>

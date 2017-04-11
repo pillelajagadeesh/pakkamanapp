@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_aFru8LOfEeWgz5_8ictZ6g" name="reachout">
+  <eAnnotations xmi:id="_aFru8bOfEeWgz5_8ictZ6g" source="Objing">
+    <contents xmi:type="uml:Property" xmi:id="_aFru8rOfEeWgz5_8ictZ6g" name="exporterVersion">
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_aFru87OfEeWgz5_8ictZ6g" value="3.0.0"/>
+    </contents>
+  </eAnnotations>
+  <packagedElement xmi:type="uml:Class" xmi:id="_aFru9LOfEeWgz5_8ictZ6g" name="Notification">
+    <ownedAttribute xmi:id="_aFru9bOfEeWgz5_8ictZ6g" name="categery" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFru9rOfEeWgz5_8ictZ6g" name="title" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFru97OfEeWgz5_8ictZ6g" name="description" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFru-LOfEeWgz5_8ictZ6g" name="validFrom" visibility="public" type="_aFrvBLOfEeWgz5_8ictZ6g" isUnique="false"/>
+    <ownedAttribute xmi:id="_aFru-bOfEeWgz5_8ictZ6g" name="validTo" visibility="public" type="_aFrvBLOfEeWgz5_8ictZ6g" isUnique="false"/>
+    <ownedAttribute xmi:id="_aFru-rOfEeWgz5_8ictZ6g" name="secureUrl" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFru-7OfEeWgz5_8ictZ6g" name="expieryDate" visibility="public" type="_aFrvBLOfEeWgz5_8ictZ6g" isUnique="false"/>
+    <ownedAttribute xmi:id="_aFru_LOfEeWgz5_8ictZ6g" name="delivered" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFru_bOfEeWgz5_8ictZ6g" name="active" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFru_rOfEeWgz5_8ictZ6g" name="created" visibility="public" type="_aFrvBLOfEeWgz5_8ictZ6g" isUnique="false"/>
+    <ownedAttribute xmi:id="_aFru_7OfEeWgz5_8ictZ6g" name="updated" visibility="public" type="_aFrvBLOfEeWgz5_8ictZ6g" isUnique="false"/>
+    <ownedAttribute xmi:id="_aFrvALOfEeWgz5_8ictZ6g" name="offensive" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvAbOfEeWgz5_8ictZ6g" name="publicId" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvArOfEeWgz5_8ictZ6g" name="url" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvA7OfEeWgz5_8ictZ6g" name="consumerId" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_aFrvBLOfEeWgz5_8ictZ6g" name="ZonedDateTime">
+    <ownedComment xmi:id="_aFrvBbOfEeWgz5_8ictZ6g">
+      <body>&lt;Enter note text here></body>
+    </ownedComment>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_aFrvBrOfEeWgz5_8ictZ6g" name="Cloudinary">
+    <ownedAttribute xmi:id="_aFrvB7OfEeWgz5_8ictZ6g" name="consumerId" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvCLOfEeWgz5_8ictZ6g" name="signature" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvCbOfEeWgz5_8ictZ6g" name="format" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvCrOfEeWgz5_8ictZ6g" name="resourceType" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvC7OfEeWgz5_8ictZ6g" name="secureUrl" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvDLOfEeWgz5_8ictZ6g" name="created" visibility="public" type="_aFrvBLOfEeWgz5_8ictZ6g" isUnique="false"/>
+    <ownedAttribute xmi:id="_aFrvDbOfEeWgz5_8ictZ6g" name="type" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvDrOfEeWgz5_8ictZ6g" name="version" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvD7OfEeWgz5_8ictZ6g" name="url" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvELOfEeWgz5_8ictZ6g" name="publicId" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvEbOfEeWgz5_8ictZ6g" name="tags" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvErOfEeWgz5_8ictZ6g" name="orginalFileName" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvE7OfEeWgz5_8ictZ6g" name="bytes" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvFLOfEeWgz5_8ictZ6g" name="width" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvFbOfEeWgz5_8ictZ6g" name="eTag" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvFrOfEeWgz5_8ictZ6g" name="height" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_aFrvF7OfEeWgz5_8ictZ6g" name="ConsumerFavourite">
+    <ownedAttribute xmi:id="_aFrvGLOfEeWgz5_8ictZ6g" name="consumerId" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvGbOfEeWgz5_8ictZ6g" name="providerId" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvGrOfEeWgz5_8ictZ6g" name="created" visibility="public" type="_aFrvBLOfEeWgz5_8ictZ6g" isUnique="false"/>
+    <ownedAttribute xmi:id="_aFrvG7OfEeWgz5_8ictZ6g" name="updated" visibility="public" type="_aFrvBLOfEeWgz5_8ictZ6g" isUnique="false"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_aFrvHLOfEeWgz5_8ictZ6g" name="ConsumerFeedback">
+    <ownedAttribute xmi:id="_aFrvHbOfEeWgz5_8ictZ6g" name="comment" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvHrOfEeWgz5_8ictZ6g" name="likeOrDislike" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvH7OfEeWgz5_8ictZ6g" name="notificationId" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvILOfEeWgz5_8ictZ6g" name="consumerId" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_aFrvIbOfEeWgz5_8ictZ6g" name="ConsumerRegions">
+    <ownedAttribute xmi:id="_aFrvIrOfEeWgz5_8ictZ6g" name="consumerId" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvI7OfEeWgz5_8ictZ6g" name="region" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_aFrvJLOfEeWgz5_8ictZ6g" name="Region">
+    <ownedAttribute xmi:id="_aFrvJbOfEeWgz5_8ictZ6g" name="name" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvJrOfEeWgz5_8ictZ6g" name="location" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvJ7OfEeWgz5_8ictZ6g" name="created" visibility="public" type="_aFrvBLOfEeWgz5_8ictZ6g" isUnique="false"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_aFrvKLOfEeWgz5_8ictZ6g" name="NotificationAcknowledgement">
+    <ownedAttribute xmi:id="_aFrvKbOfEeWgz5_8ictZ6g" name="read" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvKrOfEeWgz5_8ictZ6g" name="consumerId" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvK7OfEeWgz5_8ictZ6g" name="notificationId" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvLLOfEeWgz5_8ictZ6g" name="delivered" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_aFrvLbOfEeWgz5_8ictZ6g" name="PrivateMessage">
+    <ownedAttribute xmi:id="_aFrvLrOfEeWgz5_8ictZ6g" name="message" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvL7OfEeWgz5_8ictZ6g" name="read" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvMLOfEeWgz5_8ictZ6g" name="delivered" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvMbOfEeWgz5_8ictZ6g" name="created" visibility="public" type="_aFrvBLOfEeWgz5_8ictZ6g" isUnique="false"/>
+    <ownedAttribute xmi:id="_aFrvMrOfEeWgz5_8ictZ6g" name="notificationId" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvM7OfEeWgz5_8ictZ6g" name="senderId" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvNLOfEeWgz5_8ictZ6g" name="receiverId" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_aFrvNbOfEeWgz5_8ictZ6g" name="SmartCicuit">
+    <ownedAttribute xmi:id="_aFrvNrOfEeWgz5_8ictZ6g" name="category" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvN7OfEeWgz5_8ictZ6g" name="subCategory" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_aFrvOLOfEeWgz5_8ictZ6g" name="DeviceInfo">
+    <ownedAttribute xmi:id="_aFrvObOfEeWgz5_8ictZ6g" name="device" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvOrOfEeWgz5_8ictZ6g" name="sdk" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvO7OfEeWgz5_8ictZ6g" name="model" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvPLOfEeWgz5_8ictZ6g" name="product" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFrvPbOfEeWgz5_8ictZ6g" name="consumerId" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_aFsWALOfEeWgz5_8ictZ6g" name="Consumer">
+    <ownedComment xmi:id="_aFsWAbOfEeWgz5_8ictZ6g">
+      <body></body>
+    </ownedComment>
+    <ownedAttribute xmi:id="_aFsWArOfEeWgz5_8ictZ6g" name="mobile" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFsWA7OfEeWgz5_8ictZ6g" name="email" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFsWBLOfEeWgz5_8ictZ6g" name="status" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFsWBbOfEeWgz5_8ictZ6g" name="otp" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFsWBrOfEeWgz5_8ictZ6g" name="otpCount" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aFsWB7OfEeWgz5_8ictZ6g" name="created" visibility="public" type="_aFrvBLOfEeWgz5_8ictZ6g" isUnique="false"/>
+    <ownedAttribute xmi:id="_aFsWCLOfEeWgz5_8ictZ6g" name="updated" visibility="public" type="_aFrvBLOfEeWgz5_8ictZ6g" isUnique="false"/>
+    <ownedAttribute xmi:id="_aFsWCbOfEeWgz5_8ictZ6g" name="name" visibility="public" isUnique="false">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+</uml:Model>

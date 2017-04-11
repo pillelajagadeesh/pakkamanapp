@@ -1,0 +1,388 @@
+
+<style>
+.activeTrue {
+	background-color: #BED5B3 !important;
+}
+
+.activeFalse {
+	background-color: #DAD097 !important;
+}
+
+.activecreate {
+	background-color: #DAD097 !important;
+}
+
+.offensiveTrue {
+	background-color: #F39090 !important;
+}
+
+.approveFalse {
+	display: none;
+	
+}
+
+.description {
+	padding-right: 32px !important;
+}
+
+/* select {
+ width: 150px;
+ text-align-last:center;
+ margin-right:5% 
+ } */
+
+@media (max-width: 768px) {
+  select{
+    font-size:13px;
+    padding:3px 6px;
+    width:90px;
+    text-indent: 5px;
+  }
+  .side {
+  text-align:center;
+  }
+}
+
+/* body  div{
+    display:table;
+    width:100%;
+    text-align:center;
+} */
+
+#leftDiv{
+  padding:0px;
+  padding-right: 0px;
+    display:table-cell;
+  margin-right: 0px;
+}
+
+#rightDiv{
+  padding:38px;
+  padding-left: 0px;
+    display:table-cell;
+  margin-left: 0px;
+}
+
+
+</style>
+<div>
+	<h2 translate="reachoutApp.notification.home.title" >Notifications</h2>
+	<div></div>
+	<jh-alert></jh-alert>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<button class="btn btn-primary" ui-sref="notification.new"
+					style="background-color: #07079E;margin-left: -10%;position:relative">
+					<span class="glyphicon glyphicon-flash" style="color: #F5F5F5;"></span>
+					<span translate="reachoutApp.notification.home.createLabel"
+						style="color: #F5F5F5;">Create a new Notification</span>
+				</button>
+			</div>
+				<!-- <B><select ng-model="notification.category" ng-change="changedCategory()"
+					style="float:left">
+						<option value="">BannerImages</option>
+						<option value="Food">Food Banner</option>
+						<option value="Fashion">Fashion Banner</option>
+						<option value="Entertainment">Entertainment Banner</option>
+						<option value="Electronics">Electronics Banner</option>
+						<option value="Education">Education Banner</option>
+						<option value="Buy/Sell/Rent">Buy/Sell/Rent Banner</option>
+						<option value="Emergency">Government Banner</option>
+						<option value="Job">Job Banner</option>
+				</select></B> -->
+
+			<!-- <div class="col-sm-8">
+				<input type="file" name="uploadfile" ng-model="uploadfile"
+					id="upload-file-input" class="filestyle" valid-file agent-file
+					accept="image/*" required ng-pattern="FILE_EXT_REGEXP">
+			</div> -->
+
+  <div class="form-group-val" id="rightDiv">
+            <label for="Main Category">Main Category</label>
+           <!--  <input type="text" class="form-control" name="category" id="field_category"
+                    ng-model="notification.category"
+                     /> -->
+                     <select  name="mainCategory" id="field_category" ng-change="changedCategory()"
+                     ng-model="notification.mainCategory"> 
+				<option value="">Select category<b class="caret"></b></option>
+				<option ng-repeat="category in details" value="{{category.id}}" >{{category.name}}</option>
+			</select>
+        </div>
+        <div class="form-group-val" id="leftDiv">
+            <label for="Sub Category">Sub Category</label>
+                     <select  name="category" id="field_category" ng-change="changedCategory()"
+                    ng-model="notification.category" >
+				<option value="">Choose a sub category<b class="caret"></b></option>
+				<option ng-repeat="subcategory in subCategoriesDetails" value="{{subcategory.id}}" >{{subcategory.name}}</option>
+				
+			</select>
+        </div>  
+				
+				<B><select ng-model="notify" ng-change="changedStatus()"
+					style="float:right;margin-top: -64px;margin-right: -65px">
+						<option value="" ng-selected="true">UnApproved</option>
+						<option value="UnApproved-Paid" ng-selected="false">UnApproved-Paid</option>
+						<option value="true">Approved</option>
+						<option value="DELETED" ng-selected="false">Deleted</option>
+						<option value="Expired" ng-selected="false">Expired</option>
+				</select></B>
+				
+				
+			</div>
+
+			<!-- </td> -->
+		</div>
+	</div>
+	<form>
+		<div class="form-group">
+			<div class="input-group">
+				<div class="input-group-addon" style="color: alice-blue">
+					<i class="fa fa-search"></i>
+				</div>
+				<input type="text" class="form-control"
+					placeholder="Custom Filter......" ng-model="search"
+					style="margin-left: -2%; background-color: azure;">
+			</div>
+		</div>
+	</form>
+	<div class="table-responsive">
+		<table class="table table-striped">
+			<thead class="thead-default">
+				<tr>
+					<th ><span class="image">Image</span></th>
+					<!-- <th><span class="image"></span></th> -->
+					<th><span class="category" style="margin-left: 44%;">Category</span></th>
+					<th><a
+						ng-click="sortType = 'title'; sortReverse = !sortReverse"> <span
+							translate="reachoutApp.notification.title">Title</span> <span
+							ng-show="sortType == 'title' && !sortReverse"
+							class="glyphicon glyphicon-triangle-bottom"></span> <span
+							ng-show="sortType == 'title' && sortReverse"
+							class="glyphicon glyphicon-triangle-top"></span>
+					</a></th>
+					<th><span translate="reachoutApp.notification.description">Description</span></th>
+					<!-- <th style="padding-left: 0; width: 100px;"><a
+						ng-click="sortType = 'validFrom'; sortReverse = !sortReverse">
+							<span translate="reachoutApp.notification.validFrom">ValidFrom</span>
+							<span ng-show="sortType == 'validFrom' && !sortReverse"
+							class="glyphicon glyphicon-triangle-bottom"></span> <span
+							ng-show="sortType == 'validFrom' && sortReverse"
+							class="glyphicon glyphicon-triangle-top"></span>
+					</a></th>
+					<th><a
+						ng-click="sortType = 'validTo'; sortReverse = !sortReverse"> <span
+							translate="reachoutApp.notification.validTo">ValidTo</span> <span
+							ng-show="sortType == 'validTo' && !sortReverse"
+							class="glyphicon glyphicon-triangle-bottom"></span> <span
+							ng-show="sortType == 'validTo' && sortReverse"
+							class="glyphicon glyphicon-triangle-top"></span>
+					</a></th> -->
+					<!-- <th><span translate="reachoutApp.notification.validFrom">ValidFrom</span></th>
+                    <th><span translate="reachoutApp.notification.validTo">ValidTo</span></th> -->
+					<!--  <th><span translate="reachoutApp.notification.secureUrl">SecureUrl</span></th> -->
+					<!--  <th><span >ExpiryDate</span></th> -->
+					<!--  <th><span translate="reachoutApp.notification.delivered">Delivered</span></th> -->
+					<th><span translate="">Ad ID</span></th>
+					<th><span translate="reachoutApp.notification.offensive">Offensive</span></th>
+					<!-- <th><span translate="">Posted On</span></th> -->
+					<th><span translate="">Free Credits</span></th>
+					<th><span translate="">Wallet Credits</span></th>
+					<th><span translate="">Home Banner</span></th>
+					<th><span translate="">Category Banner</span></th>
+					<!-- <th><span translate="">Radius in Km</span></th> -->
+					
+
+
+					<!--  <th>
+                    <span translate="reachoutApp.notification.active">Active</span>
+                     <select ng-model="notification.active" style="margin-left: 61px;">
+				        <option value="">Active</option>
+				        <option value="true">true</option>
+				        <option value="false">false</option>
+				    </select>
+                    </th> -->
+					<!--  <th><span translate="reachoutApp.notification.consumerId">ConsumerId</span></th> -->
+					<th><span translate="Action" style="margin-left: 123px;">Action</span></th>
+
+					<th></th>
+
+				</tr>
+			</thead>
+			<tbody>
+
+				<!-- <tr
+					ng-repeat="notification in filtered = (notifications | offset: currentPage*itemsPerPage | limitTo: itemsPerPage | notificationFilter:selectedNotifications)| filter:search | orderBy:sortType:sortReverse track by notification.id"
+					ng-class="{activeTrue: notification.active == true, activeFalse: notification.active == false,activecreate: notification.active != true, offensiveTrue: notification.offensive == true }"> -->
+					<tr ng-repeat="notification in filtered = (notifications | offset: currentPage*itemsPerPage | limitTo: itemsPerPage | notificationFilter:selectedNotifications) | filter:search" 
+					ng-class="{activeTrue: notification.active == true, activeFalse: notification.active == false,activecreate: notification.active != true, offensiveTrue: notification.offensive == true }"> 
+					<td>
+					<!-- 	<div id="thumbwrap">
+							<a class="thumb" ng-href="{{notification.imageUrls[0] || 'http://res.cloudinary.com/mist-minds/image/upload/v1480672656/bbklfcl27gmijyxrqiag.jpg'}}" target="_Blank"
+								onError="this.src='https://static.pexels.com/photos/6454/nature-flowers-summer-branches-large.jpg'"
+								alt="image" style="width: 70px; height: 70px">
+								 <img ng-src="{{notification.imageUrls[0] || 'http://res.cloudinary.com/mist-minds/image/upload/v1480672656/bbklfcl27gmijyxrqiag.jpg' }}" alt="image"
+								style="width: 50px; height: 80px; margin-top: -85%; margin-left: -10%;">
+								<span><img  ng-src="{{notification.imageUrls[0] || 'http://res.cloudinary.com/mist-minds/image/upload/v1480672656/bbklfcl27gmijyxrqiag.jpg'}}" alt="image"
+									style="width: 200px; height: 220px; margin-left: 25%; margin-top: -80%;"></span>
+							</a>
+						</div>  -->
+						
+					<div id="slides_control">
+						<carousel interval="myInterval"> <slide
+							ng-repeat="slide in notification.imageUrls"> <a
+							ng-href="{{slide|| 'http://res.cloudinary.com/mist-minds/image/upload/v1480672656/bbklfcl27gmijyxrqiag.jpg'}}"
+							target="_Blank" style="width: 70px; height: 70px"><img
+							ng-src="{{slide}}" style="width: 115px; height: 120px"></a>
+						<div class="carousel-caption"></div>
+						</slide> </carousel>
+					</div>
+				</td>
+					<td>
+					
+           <!--  <input type="text" class="form-control" name="category" id="field_category"
+                    ng-model="notification.category"
+                     /> -->
+                     <select style="margin-left: 70px;width: 60%;" 
+                     ng-model="notification.mainCategoryId" id="category-{{notification.id}}"> 
+				<option ng-repeat="category in details" value="{{category.id}}" >{{category.name}}</option>
+			</select>
+                     <select style="margin-left: 70px;width: 60%;" 
+                    ng-model="notification.categoryId" id="subCategory-{{notification.id}}">
+				<option value="">Choose a sub category<b class="caret"></b></option>
+				<option ng-repeat="subcategory in subCategoriesDetails" value="{{subcategory.id}}" >{{subcategory.name}}</option>
+				
+			</select>
+       	 
+        </td> 
+
+					<!-- <td><select ng-model="category" style="width:150px"
+						id="category-{{notification.id}}" ng-change="changedCategory(this)">
+							<option value="">{{notification.categoryId}}</option>
+							<optgroup  value="none"  style="color: black;font-family: 'Anton', sans-serif;" label="Food">
+							<option value="" ng-if="notification.categoryId=='582451c17075c74ce1441363'">South Indian</option>
+							<option value="" ng-if="notification.categoryId=='582452aa7075c74ce1441364'">North Indian</option>
+							<option value="" ng-if="notification.categoryId=='58245ab77075c74ce1441365'">Fast Foods</option>
+							<option value="" ng-if="notification.categoryId=='58245acf7075c74ce1441366'">Sweets & Chats</option>
+							<option value="" ng-if="notification.categoryId=='58245ae57075c74ce1441367'">Fine Dining Resorts</option>
+							<option value="" ng-if="notification.categoryId=='58245b0a7075c74ce1441368'">Coffee & Drinks</option></optgroup>
+							<optgroup  value="none" style="color: black;font-family: 'Anton', sans-serif;" label="Fashion">
+							<option value="" ng-if="notification.categoryId=='58245c6a7075c74ce1441369'">Men</option>
+							<option value="" ng-if="notification.categoryId=='58245c797075c74ce144136a'">Women</option>
+							<option value="" ng-if="notification.categoryId=='58245c8a7075c74ce144136b'">Kids</option>
+							<option value="" ng-if="notification.categoryId=='58245c9c7075c74ce144136c'" >Home Decors</option></optgroup>
+							<option value=""  ng-if="notification.categoryId=='57837b48a8db501e5ff95f34'" style="color: black;font-family: 'Anton', sans-serif;">Entertainment/Sports</option>
+							<option value=""  ng-if="notification.categoryId=='57837b56a8db501e5ff95f35'" style="color: black;font-family: 'Anton', sans-serif;">Electronics</option>
+							<option value=""  ng-if="notification.categoryId=='57837b63a8db501e5ff95f36'" style="color: black;font-family: 'Anton', sans-serif;">Education</option>
+							<optgroup  value="none"  style="color: black;font-family: 'Anton', sans-serif;" label="Buy/Sell/Rent">
+							<option value="" ng-if="notification.categoryId=='58245e777075c74ce144136d'">Mobiles</option>
+							<option value="" ng-if="notification.categoryId=='58245f937075c74ce144136f'">Household</option>
+							<option value="" ng-if="notification.categoryId=='58245ea27075c74ce144136e'">Vehicles</option></optgroup>
+							<optgroup value="none" style="color: black;font-family: 'Anton', sans-serif;" label="Job">
+							<option value="" ng-if="notification.categoryId=='5824606c7075c74ce1441370'">Part Time</option>
+							<option value="" ng-if="notification.categoryId=='582460887075c74ce1441371'">Full Time</option>
+							<option value="" ng-if="notification.categoryId=='5824609b7075c74ce1441372'">Internship</option>
+							<option value="" ng-if="notification.categoryId=='582460ac7075c74ce1441373'">Field & Sales Work</option></optgroup>
+							<option value="" ng-if="notification.categoryId=='57837b9aa8db501e5ff95f3b'" style="color: black;font-family: 'Anton', sans-serif;">Public Notify</option>
+							<option value="" ng-if="notification.categoryId=='57837baea8db501e5ff95f3d'" style="color: black;font-family: 'Anton', sans-serif;">Miscellaneous</option>
+							
+					</select></td> -->
+					<td><a ui-sref="notification.detail({id:notification.id})">{{notification.title
+							| limitTo :50}}</a></td>
+					<td><span ng-class="description"
+						style="display: inline-block; width: 200px;">{{notification.description
+							| limitTo :100}}</span></td>
+				<!-- 	<td>{{notification.validFrom | date:'dd/MM/yyyy'}}</td>
+					<td>{{notification.validTo | date:'dd/MM/yyyy'}}</td> -->
+					<td style="padding-left: 1%;">{{notification.trackId}}</td>
+					<td style="padding-left: 1%;">{{notification.offensive}}</td>
+				<!-- 	 <td style="padding-left: 1%;size:10px">{{notification.notificationDate | date:'medium'}}</td> -->
+					<td style="padding-left: 1%;">{{notification.freeCreditsUsed}}</td>
+					<td style="padding-left: 1%;">{{notification.walletCreditsUsed}}</td>
+					<td><input type="checkbox" ng-model="notification.homeBannerStatus"></td>
+					<td><input type="checkbox" ng-model="notification.categoryBannerStatus"></td>
+					<!-- <td style="padding-left: 1%;">{{notification.radius | distance}}</td> -->
+					 
+					
+					<td>
+						<div class="col-sm-2">
+							<button type="approvebutton"
+								ng-class="{approveFalse: notification.active == true}"
+								onclick="this.disabled=true;"
+								ng-click="approve(notification.id,notification.active)"
+								class="btn btn-primary btn-sm"
+								style="background-color: #07079E; color: #F5F5F5; height: 30px; width: 120px">
+								<span class="glyphicon glyphicon-send" style="color: #F5F5F5;"></span>&nbsp;<span>{{notification.active
+									== true ? 'Approved' : 'Approve'}}</span>
+
+							</button>
+
+							<button type="submit"
+								ui-sref="provider.list({id:notification.consumerId})"
+								class="btn btn-primary btn-sm"
+								style="background-color: #07079E; height: 30px; width: 120px">
+								<span class="glyphicon glyphicon-user" style="color: #F5F5F5;"></span>&nbsp;<span
+									translate="" style="color: #F5F5F5;">Provider</span>
+							</button>
+
+							<button type="submit"
+								ui-sref="notification.list({id:notification.consumerId})"
+								class="btn btn-primary btn-sm"
+								style="background-color: #07079E; height: 30px; width: 120px">
+								<span class="glyphicon glyphicon-book" style="color: #F5F5F5;"></span>&nbsp;<span
+									translate="" style="color: #F5F5F5;">History</span>
+							</button>
+						</div>
+
+					</td>
+					<td style="padding-right:-13%;">
+						<div class="col-sm-2">
+							<button type="submit"
+								ui-sref="notification.edit({id:notification.id})"
+								class="btn btn-primary btn-sm"
+								style="background-color: #07079E; height: 30px; width: 120px">
+								<span class="glyphicon glyphicon-pencil" style="color: #F5F5F5;"></span>&nbsp;<span
+									translate="entity.action.edit" style="color: #F5F5F5;">
+									Edit</span>
+							</button>
+
+							<button type="submit"
+								ui-sref="notification.delete({id:notification.id})"
+								class="btn btn-primary btn-sm"
+								style="background-color: #07079E; height: 30px; width: 120px">
+								<span class="glyphicon glyphicon-trash" style="color: #F5F5F5;"></span>&nbsp;<span
+									translate="entity.action.delete" style="color: #F5F5F5;">
+									Delete</span>
+							</button>
+
+							<button type="submit"
+								ui-sref="notification.block({id:notification.id})"
+								class="btn btn-primary btn-sm"
+								style="background-color: #07079E; height: 30px; width: 120px">
+								<span class="glyphicon glyphicon-ban-circle"
+									style="color: #F5F5F5;"></span>&nbsp;<span translate=""
+									style="color: #F5F5F5;"> Block</span>
+							</button>
+						</div>
+
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<tfoot>
+	<td colspan="3">
+		<div class="pagination">
+			<ul class="pagination">
+				<li ng-class="DisablePrevPage()"><a href ng-click="prevPage()">
+						<< Prev</a></li>
+				<li ng-repeat="n in range()" ng-class="{active: n == currentPage}"
+					ng-click="setPage(n)"><a href="">{{n+1}}</a></li>
+				<li ng-class="DisableNextPage()"><a href ng-click="nextPage()">Next
+						>></a></li>
+			</ul>
+
+		</div>
+	</td>
+</tfoot>
+</div>

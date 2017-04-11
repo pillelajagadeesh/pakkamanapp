@@ -1,0 +1,112 @@
+
+<div>
+    <h2><span translate="reachoutApp.provider.detail.title">Provider</span> {{provider.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="">Image</span><!-- reachoutApp.notification.url -->
+                </td>
+                 <td>
+                    <span class="form-control-static"><img src="{{provider.imageUrl}}" alt="image" style="width: 200px; height: 200px" onError="this.src='http://www.personal.psu.edu/jul229/mini.jpg'"
+						style="width: 200px; height: 200px;"/></span>
+                </td>
+                
+            </tr>
+            <tr>
+                <td>
+                    <span translate="">Business Name</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{provider.name}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="reachoutApp.provider.mobile">Mobile</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{provider.mobile}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="reachoutApp.provider.email">Email</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{provider.email}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="reachoutApp.provider.address">Address</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{provider.address}}</span>
+                </td>
+            </tr>
+            <!-- <tr>
+                <td>
+                    <span translate="">Status</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{provider.status}}</span>
+                </td>
+            </tr> -->
+            <!-- <tr>
+                <td>
+                    <span translate="">Otp</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{provider.otp}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="">OtpCount</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{provider.otpCount}}</span>
+                </td>
+            </tr> -->
+            <tr>
+                <td>
+                    <span translate="">Created</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{provider.created | date:'medium'}}</span>
+                </td>
+            </tr> 
+            <!-- <tr>
+                <td>
+                    <span translate="">Updated</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{provider.updated | date:'medium'}}</span>
+                </td>
+            </tr> -->
+            <!-- <tr>
+                <td>
+                    <span translate="reachoutApp.provider.name">Name</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{provider.name}}</span>
+                </td>
+            </tr> -->
+            </tbody>
+        </table>
+    </div>
+
+     <button type="submit"
+           onclick="window.history.back()"
+class="btn btn-primary btn-sm" style="background-color: #07079E;>
+       <span class="glyphicon glyphicon-arrow-left" style="color: #F5F5F5;"></span>&nbsp;<span translate="entity.action.back"style="color: #F5F5F5;"> Back</span>
+   </button>
+</div>

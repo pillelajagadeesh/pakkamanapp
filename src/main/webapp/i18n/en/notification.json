@@ -1,0 +1,46 @@
+{
+    "reachoutApp": {
+        "notification" : {
+            "home": {
+                "title": "Notifications",
+                "createLabel": "Create a new Notification",
+                "createOrEditLabel": "Create or edit a Notification"
+            },
+            "created": "A new Notification is created with identifier {{ param }}",
+            "updated": "A Notification is updated with identifier {{ param }}",
+            "deleted": "A Notification is deleted with identifier {{ param }}",
+            "sent": "A Notification is  updated with identifier {{ param }}",
+            "failure": "A Notification is not updated with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Notification {{ id }}?"
+            },
+            "rollback": "A Notification is block  with identifier {{ param }}",
+           "block": {
+               "question": "Are you sure you want to block Notification {{ id }}?"
+           },
+            "detail": {
+                "title": "Notification"
+            },
+            "categery": "Categery",
+            "title": "Title",
+            "description": "Description",
+            "validFrom": "ValidFrom",
+            "validTo": "ValidTo",
+            "secureUrl": "SecureUrl",
+            "expieryDate": "ExpieryDate",
+            "delivered": "Delivered",
+            "active": "Active",
+            "created": "Created",
+            "updated": "Updated",
+            "offensive": "Offensive",
+            "publicId": "PublicId",
+            "url": "Url",
+            "mrpPrice":"MrpPrice",
+            "offerPrice":"OfferPrice",
+            "hotLink":"HotLink",
+            "radius":"Radius",
+            "image":"Image",
+            "consumerId": "ConsumerId"
+        }
+    }
+}

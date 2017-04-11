@@ -1,0 +1,48 @@
+{
+  "relationships": [],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "mobile",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "otp",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "otpCount",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "created",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "updated",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldId": 8,
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160105112820",
+  "dto": "no",
+  "pagination": "no"
+}

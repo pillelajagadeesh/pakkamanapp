@@ -1,0 +1,72 @@
+<div>
+    <h2 translate="reachoutApp.cities.home.title">Cities</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="cities.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="reachoutApp.cities.home.createLabel">
+                        Create new Cities
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <!-- <th><span translate="global.field.id">ID</span></th> -->
+                    <th><span translate="reachoutApp.cities.cityname">Cityname</span></th>
+                    <th><span translate="reachoutApp.cities.citylocation">Citylocation</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+             <tr ng-repeat="cities in filtered =(vm.cities | offset: currentPage*itemsPerPage | limitTo: itemsPerPage)|orderBy:sortType:sortReverse  track by cities.id">                    <!-- <td><a ui-sref="cities-detail({id:cities.id})">{{cities.id}}</a></td> -->
+                    <td><a ui-sref="cities-detail({id:cities.id})">{{cities.cityname}}</a></td>
+                    <td>{{cities.citylocation}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <!-- <button type="submit"
+                                    ui-sref="cities-detail({id:cities.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button> -->
+                            <button type="submit"
+                                    ui-sref="cities.edit({id:cities.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="cities.delete({id:cities.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+     <tfoot>
+			<td colspan="3">
+		<div class="pagination">
+			<ul class="pagination">
+				<li ng-class="DisablePrevPage()"><a href ng-click="prevPage()">
+						<< Prev</a></li>
+				<li ng-repeat="n in range()" ng-class="{active: n == currentPage}"
+					ng-click="setPage(n)"><a href="">{{n+1}}</a></li>
+				<li ng-class="DisableNextPage()"><a href ng-click="nextPage()">Next
+						>></a></li>
+			</ul>
+
+		</div>
+	</td>
+	</tfoot>
+</div>

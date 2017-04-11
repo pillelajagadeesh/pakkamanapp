@@ -1,0 +1,70 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myPrivateMessageLabel" translate="reachoutApp.privateMessage.home.createOrEditLabel">Create or edit a PrivateMessage</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="privateMessage.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="reachoutApp.privateMessage.message" for="field_message">Message</label>
+            <input type="text" class="form-control" name="message" id="field_message"
+                    ng-model="privateMessage.message"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="reachoutApp.privateMessage.read" for="field_read">Read</label>
+            <input type="checkbox" class="form-control" name="read" id="field_read"
+                    ng-model="privateMessage.read"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="reachoutApp.privateMessage.delivered" for="field_delivered">Delivered</label>
+            <input type="text" class="form-control" name="delivered" id="field_delivered"
+                    ng-model="privateMessage.delivered"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="reachoutApp.privateMessage.created" for="field_created">Created</label>
+            <input id="field_created" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}" ng-model="privateMessage.created" is-open="datePickerForCreated.status.opened"
+            />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForCreatedOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="reachoutApp.privateMessage.notificationId" for="field_notificationId">NotificationId</label>
+            <input type="text" class="form-control" name="notificationId" id="field_notificationId"
+                    ng-model="privateMessage.notificationId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="reachoutApp.privateMessage.senderId" for="field_senderId">SenderId</label>
+            <input type="text" class="form-control" name="senderId" id="field_senderId"
+                    ng-model="privateMessage.senderId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="reachoutApp.privateMessage.receiverId" for="field_receiverId">ReceiverId</label>
+            <input type="text" class="form-control" name="receiverId" id="field_receiverId"
+                    ng-model="privateMessage.receiverId"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

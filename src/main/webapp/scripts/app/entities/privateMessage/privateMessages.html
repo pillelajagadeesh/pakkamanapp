@@ -1,0 +1,76 @@
+<div>
+    <h2 translate="reachoutApp.privateMessage.home.title">PrivateMessages</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="privateMessage.new" style="background-color: #07079E;margin-left: -23%;">
+                    <span class="glyphicon glyphicon-flash" style="color: #F5F5F5;"></span> <span translate="reachoutApp.privateMessage.home.createLabel" style="color: #F5F5F5;">Create a new PrivateMessage</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="reachoutApp.privateMessage.message">Message</span></th>
+                    <th><span translate="reachoutApp.privateMessage.read">Read</span></th>
+                    <th><span translate="reachoutApp.privateMessage.delivered">Delivered</span></th>
+                    <th><span translate="reachoutApp.privateMessage.created">Created</span></th>
+                    <th><span translate="reachoutApp.privateMessage.notificationId">NotificationId</span></th>
+                    <th><span translate="reachoutApp.privateMessage.senderId">SenderId</span></th>
+                    <th><span translate="reachoutApp.privateMessage.receiverId">ReceiverId</span></th>
+                    <th><span translate="Action" style="margin-left: 0px;">Action</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="privateMessage in filtered =(privateMessages | offset: currentPage*itemsPerPage | limitTo: itemsPerPage) |  orderBy:sortType:sortReverse track by privateMessage.id">
+                    <td><a ui-sref="privateMessage.detail({id:privateMessage.id})">{{privateMessage.id}}</a></td>
+                    <td>{{privateMessage.message}}</td>
+                    <td>{{privateMessage.read}}</td>
+                    <td>{{privateMessage.delivered}}</td>
+                    <td>{{privateMessage.created | date:'medium'}}</td>
+                    <td>{{privateMessage.notificationId}}</td>
+                    <td>{{privateMessage.senderId}}</td>
+                    <td>{{privateMessage.receiverId}}</td>
+                    <td>
+                        <button type="submit"
+                               ui-sref="privateMessage.detail({id:privateMessage.id})"
+                               class="btn btn-primary btn-sm" style="background-color: #07079E;">
+                           <span class="glyphicon glyphicon-eye-open" style="color: #F5F5F5;"></span>&nbsp;<span translate="entity.action.view" style="color: #F5F5F5;"> View</span>
+                       </button>
+                       <button type="submit"
+                               ui-sref="privateMessage.edit({id:privateMessage.id})"
+                               class="btn btn-primary btn-sm" style="background-color: #07079E;">
+                           <span class="glyphicon glyphicon-pencil" style="color: #F5F5F5;"></span>&nbsp;<span translate="entity.action.edit" style="color: #F5F5F5;"> Edit</span>
+                       </button>
+                       <button type="submit"
+                               ui-sref="privateMessage.delete({id:privateMessage.id})"
+                               class="btn btn-primary btn-sm" style="background-color: #07079E;">
+                           <span class="glyphicon glyphicon-trash" style="color: #F5F5F5;"></span>&nbsp;<span translate="entity.action.delete" style="color: #F5F5F5;"> Delete</span>
+                       </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <tfoot>
+		<td colspan="3">
+		<div class="pagination">
+			<ul class="pagination">
+				<li ng-class="DisablePrevPage()"><a href ng-click="prevPage()">
+						<< Prev</a></li>
+				<li ng-repeat="n in range()" ng-class="{active: n == currentPage}"
+					ng-click="setPage(n)"><a href="">{{n+1}}</a></li>
+				<li ng-class="DisableNextPage()"><a href ng-click="nextPage()">Next
+						>></a></li>
+			</ul>
+
+		</div>
+	</td>
+	</tfoot>
+    </div>
+</div>

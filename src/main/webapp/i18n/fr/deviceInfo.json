@@ -1,0 +1,26 @@
+{
+    "reachoutApp": {
+        "deviceInfo" : {
+            "home": {
+                "title": "DeviceInfos",
+                "createLabel": "Créer un nouveau DeviceInfo",
+                "createOrEditLabel": "Créer ou éditer un DeviceInfo"
+            },
+            "created": "Un nouveau DeviceInfo a été créé avec l'identifiant {{ param }}",
+            "updated": "Le DeviceInfo avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le DeviceInfo avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le DeviceInfo {{ id }} ?"
+            },
+            "detail": {
+                "title": "DeviceInfo"
+            },
+            "device": "Device",
+            "sdk": "Sdk",
+            "model": "Model",
+            "product": "Product",
+            "consumerId": "ConsumerId"
+        }
+    }
+}
+

@@ -1,0 +1,223 @@
+<style>
+.activeTrue {
+	background-color: #BED5B3 !important;
+}
+
+.activeFalse {
+	background-color: #DAD097 !important;
+}
+
+.activecreate {
+	background-color: #DAD097 !important;
+}
+
+.offensiveTrue {
+	background-color: #F39090 !important;
+}
+
+.approveFalse {
+	display: none;
+}
+
+.description {
+	padding-right: 32px !important;
+}
+
+
+.styled-select {
+       width: 220px;
+       height: 25px;
+       overflow: hidden;
+       background: url("assets/images/drop-down-arrow.png") no-repeat right #fff;
+       border: 1px solid #ccc;
+       margin:auto;
+       border-radius:6px;
+    }
+    .styled-select select {
+       background: transparent;
+       width: 220px;
+       padding: 5px;
+       font-size: 15px;
+       line-height: 1;
+       border: 0;
+       border-radius: 0;
+       height: 34px;
+       -webkit-appearance: none;
+       font-family:sans-serif;
+       color:#000;   
+    }
+
+
+
+</style>
+
+
+<div>
+   <h2 translate="">Provider Notification History</h2>
+   <div class="container">
+		<div class="row">
+			<div class="col-md-4">
+                 <select ng-model="notification.active"  
+					style="margin-left: 267%; padding-top: 5px; position: absolute; margin-top: -4%;">
+						<option value="">Active</option>
+							<option value="true">true</option>
+							<option value="false">false</option>
+						</select>
+						</div>
+						</div>
+						</div>
+    <form>
+   <div class="form-group">
+     <div class="input-group">
+       <div class="input-group-addon"><i class="fa fa-search"></i></div>
+       <input type="text" class="form-control" placeholder="Custom Filter......" ng-model="search.category" style="background-color: aliceblue;margin-left: -2%;">
+     </div>
+   </div>
+ </form>
+   <div class="table-responsive">
+       <table class="table table-striped" >
+           <thead>
+               <tr>
+                   <th><span class="image">Image</span></th>
+                   <th>
+                       <span class="category">Category</span>
+                   </th>
+                   <th>
+                   <span translate="reachoutApp.notification.title">Title</span>
+           	</th>
+                   <th><span translate="reachoutApp.notification.description">Description</span></th>
+                   <th>
+                   <span translate="reachoutApp.notification.validFrom">ValidFrom</span>
+           	</th>
+           	<th>
+                   <span translate="reachoutApp.notification.validTo">ValidTo</span>
+           	
+                   </th>
+                   
+                   <th><span translate="reachoutApp.notification.offensive">Offensive</span></th>
+                   <th><span translate="">Posted On</span></th>
+					<th><span translate="">Free Credits</span></th>
+					<th><span translate="">Wallet Credits</span></th>
+                   <th><span translate="Action" style="margin-left: 39px;">Action</span></th>
+                  <th></th>
+                  
+               </tr>
+           </thead>
+           <tbody>
+           
+               <tr ng-repeat="notification in filtered = (notifications | notificationFilter:selectedNotifications) | filter:notification| filter:search | orderBy:sortType:sortReverse track by notification.id"  ng-class="{activeTrue: notification.active == true, activeFalse: notification.active == false,activecreate: notification.active != true, offensiveTrue: notification.offensive == 'true' }">
+                  <td>
+						<div id="thumbwrap">
+							<a class="thumb" ng-href="{{notification.imageUrls[0]}}" target="_Blank"
+								onError="this.src='https://static.pexels.com/photos/6454/nature-flowers-summer-branches-large.jpg'"
+								alt="image" style="width: 70px; height: 70px"> <img
+								src="{{notification.imageUrls[0]}}" alt="image"
+								style="width: 50px; height: 80px; margin-top: -85%; margin-left: -10%;">
+								<span><img src="{{notification.imageUrls[0]}}" alt="image"
+									style="width: 200px; height: 220px; margin-left: 25%; margin-top: -80%;"></span>
+							</a>
+					</td>
+			      
+                   <td> 
+                   <div class="styled-select">  
+                   <select  ng-model="category" id="category-{{notification.id}}">
+                       <option value="">{{notification.categoryId}}</option>
+                       <option value="Food">Food</option>
+                       <option value="Fashion">Fashion</option>
+                       <option value="Entertainment">Entertainment</option>
+                       <option value="Electronics">Electronics</option>
+                       <option value="Education">Education</option>
+                       <option value="Services">Services</option>
+                       <option value="Buy/Sell/Rent">Buy/Sell/Rent</option>
+                       <option value="Emergency">Emergency</option>
+                       <option value="Job">Job</option>
+                       <option value="Health">Health</option>
+                       <option value="Traffic">Traffic</option>
+                       <option value="Miscellaneous">Miscellaneous</option>
+       
+                     </select>
+                     </div>
+                    </td>
+                   
+                   <td><a ui-sref="notification.detail({id:notification.id})" style="color: #1A2A80">{{notification.title | limitTo :50}}</a></td>
+                   <td><span ng-class="description" style="display: inline-block; width: 200px;" >{{notification.description | limitTo :100}}</span></td>
+                   <td>{{notification.validFrom | date:'dd/MM/yyyy'}}</td>
+                   <td>{{notification.validTo | date:'dd/MM/yyyy'}}</td>
+                   
+                    <td style="padding-left: 4%;">{{notification.offensive}}</td>
+                    <td style="padding-left: 1%;">{{notification.notificationDate | date:'medium'}}</td>
+					<td style="padding-left: 1%;">{{notification.freeCreditsUsed}}</td>
+					<td style="padding-left: 1%;">{{notification.walletCreditsUsed}}</td>
+                   
+                  <td>
+						<div class="col-sm-2">
+							<button type="approvebutton"
+								ng-class="{approveFalse: notification.active == true}"
+								onclick="this.disabled=true;"
+								ng-click="approve(notification.id,notification.active)"
+								class="btn btn-primary btn-sm"
+								style="background-color: #07079E; color: #F5F5F5; height: 30px; width: 120px">
+								<span class="glyphicon glyphicon-send" style="color: #F5F5F5;"></span>&nbsp;<span>{{notification.active
+									== true ? 'Approved' : 'Approve'}}</span>
+
+							</button>
+
+							<button type="submit"
+								ui-sref="provider.list({id:notification.consumerId})"
+								class="btn btn-primary btn-sm"
+								style="background-color: #07079E; height: 30px; width: 120px">
+								<span class="glyphicon glyphicon-user" style="color: #F5F5F5;"></span>&nbsp;<span
+									translate="" style="color: #F5F5F5;">Provider</span>
+							</button>
+
+							<button type="submit"
+								ui-sref="notification.list({id:notification.consumerId})"
+								class="btn btn-primary btn-sm"
+								style="background-color: #07079E; height: 30px; width: 120px">
+								<span class="glyphicon glyphicon-book" style="color: #F5F5F5;"></span>&nbsp;<span
+									translate="" style="color: #F5F5F5;">History</span>
+							</button>
+						</div>
+
+					</td>
+					<td style="padding-right:-13%;">
+						<div class="col-sm-2">
+							<button type="submit"
+								ui-sref="notification.edit({id:notification.id})"
+								class="btn btn-primary btn-sm"
+								style="background-color: #07079E; height: 30px; width: 120px">
+								<span class="glyphicon glyphicon-pencil" style="color: #F5F5F5;"></span>&nbsp;<span
+									translate="entity.action.edit" style="color: #F5F5F5;">
+									Edit</span>
+							</button>
+
+							<button type="submit"
+								ui-sref="notification.delete({id:notification.id})"
+								class="btn btn-primary btn-sm"
+								style="background-color: #07079E; height: 30px; width: 120px">
+								<span class="glyphicon glyphicon-trash" style="color: #F5F5F5;"></span>&nbsp;<span
+									translate="entity.action.delete" style="color: #F5F5F5;">
+									Delete</span>
+							</button>
+
+							<button type="submit"
+								ui-sref="notification.block({id:notification.id})"
+								class="btn btn-primary btn-sm"
+								style="background-color: #07079E; height: 30px; width: 120px">
+								<span class="glyphicon glyphicon-ban-circle"
+									style="color: #F5F5F5;"></span>&nbsp;<span translate=""
+									style="color: #F5F5F5;"> Block</span>
+							</button>
+						</div>
+
+					</td>
+               </tr>
+           </tbody>
+       </table>
+   </div>
+    <button type="submit"
+           onclick="window.history.back()"
+    class="btn btn-primary btn-sm" style="background-color: #07079E;>
+       <span class="glyphicon glyphicon-arrow-left" style="color: #F5F5F5;"></span>&nbsp;<span translate="entity.action.back"style="color: #F5F5F5;"> Back</span>
+   </button>
+</div>

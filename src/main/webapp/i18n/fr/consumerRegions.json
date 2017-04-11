@@ -1,0 +1,23 @@
+{
+    "reachoutApp": {
+        "consumerRegions" : {
+            "home": {
+                "title": "ConsumerRegionss",
+                "createLabel": "Créer un nouveau ConsumerRegions",
+                "createOrEditLabel": "Créer ou éditer un ConsumerRegions"
+            },
+            "created": "Un nouveau ConsumerRegions a été créé avec l'identifiant {{ param }}",
+            "updated": "Le ConsumerRegions avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le ConsumerRegions avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le ConsumerRegions {{ id }} ?"
+            },
+            "detail": {
+                "title": "ConsumerRegions"
+            },
+            "consumerId": "ConsumerId",
+            "region": "Region"
+        }
+    }
+}
+

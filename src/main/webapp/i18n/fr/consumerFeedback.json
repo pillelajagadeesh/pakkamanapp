@@ -1,0 +1,25 @@
+{
+    "reachoutApp": {
+        "consumerFeedback" : {
+            "home": {
+                "title": "ConsumerFeedbacks",
+                "createLabel": "Créer un nouveau ConsumerFeedback",
+                "createOrEditLabel": "Créer ou éditer un ConsumerFeedback"
+            },
+            "created": "Un nouveau ConsumerFeedback a été créé avec l'identifiant {{ param }}",
+            "updated": "Le ConsumerFeedback avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le ConsumerFeedback avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le ConsumerFeedback {{ id }} ?"
+            },
+            "detail": {
+                "title": "ConsumerFeedback"
+            },
+            "comment": "Comment",
+            "likeOrDislike": "LikeOrDislike",
+            "notificationId": "NotificationId",
+            "consumerId": "ConsumerId"
+        }
+    }
+}
+

@@ -1,0 +1,80 @@
+<div>
+    <h2 translate="reachoutApp.deviceInfo.home.title">DeviceInfos</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="deviceInfo.new" style="background-color: #07079E;margin-left: -23%;">
+                    <span class="glyphicon glyphicon-flash" style="color: #F5F5F5;"></span> <span translate="reachoutApp.deviceInfo.home.createLabel" style="color: #F5F5F5;">Create a new DeviceInfo</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="reachoutApp.deviceInfo.device">Device</span></th>
+                    <th><span translate="reachoutApp.deviceInfo.sdk">Sdk</span></th>
+                    <th><span translate="reachoutApp.deviceInfo.model">Model</span></th>
+                    <th><span translate="reachoutApp.deviceInfo.product">Product</span></th>
+                    <th><span translate="reachoutApp.deviceInfo.consumerId">ConsumerId</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+	 <tr ng-repeat="deviceInfo in filtered =(deviceInfos | offset: currentPage*itemsPerPage | limitTo: itemsPerPage)|orderBy:sortType:sortReverse  track by deviceInfo.id">                    <td><a ui-sref="deviceInfo.detail({id:deviceInfo.id})">{{deviceInfo.id}}</a></td>
+                    <td>{{deviceInfo.device}}</td>
+                    <td>{{deviceInfo.sdk}}</td>
+                    <td>{{deviceInfo.model}}</td>
+                    <td>{{deviceInfo.product}}</td>
+                    <td>{{deviceInfo.consumerId}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="deviceInfo.detail({id:deviceInfo.id})"
+                                class="btn btn-info btn-sm"
+                            style="background-color: #07079E;">
+								<span class="glyphicon glyphicon-eye-open"
+									style="color: #F5F5F5;"></span>&nbsp;<span translate="View"
+									style="color: #F5F5F5;">View</span>
+							</button>
+                        <button type="submit"
+                                ui-sref="deviceInfo.edit({id:deviceInfo.id})"
+                                class="btn btn-primary btn-sm"
+                           style="background-color: #07079E; height: 30px; width: 97px">
+								<span class="glyphicon glyphicon-pencil" style="color: #F5F5F5;"></span>&nbsp;<span
+									translate="entity.action.edit" style="color: #F5F5F5;">
+									Edit</span>
+							</button>
+                        <button type="submit"
+                                ui-sref="deviceInfo.delete({id:deviceInfo.id})"
+                                class="btn btn-danger btn-sm"
+                            style="background-color: #07079E; height: 30px; width: 120px">
+								<span class="glyphicon glyphicon-trash" style="color: #F5F5F5;"></span>&nbsp;<span
+									translate="entity.action.delete" style="color: #F5F5F5;">
+									Delete</span>
+							</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <tfoot>
+			<td colspan="3">
+		<div class="pagination">
+			<ul class="pagination">
+				<li ng-class="DisablePrevPage()"><a href ng-click="prevPage()">
+						<< Prev</a></li>
+				<li ng-repeat="n in range()" ng-class="{active: n == currentPage}"
+					ng-click="setPage(n)"><a href="">{{n+1}}</a></li>
+				<li ng-class="DisableNextPage()"><a href ng-click="nextPage()">Next
+						>></a></li>
+			</ul>
+
+		</div>
+	</td>
+	</tfoot>
+</div>

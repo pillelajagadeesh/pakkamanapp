@@ -1,0 +1,36 @@
+{
+    "reachoutApp": {
+        "cloudinary" : {
+            "home": {
+                "title": "Cloudinarys",
+                "createLabel": "Create a new Cloudinary",
+                "createOrEditLabel": "Create or edit a Cloudinary"
+            },
+            "created": "A new Cloudinary is created with identifier {{ param }}",
+            "updated": "A Cloudinary is updated with identifier {{ param }}",
+            "deleted": "A Cloudinary is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Cloudinary {{ id }}?"
+            },
+            "detail": {
+                "title": "Cloudinary"
+            },
+            "consumerId": "ConsumerId",
+            "signature": "Signature",
+            "format": "Format",
+            "resourceType": "ResourceType",
+            "secureUrl": "SecureUrl",
+            "created": "Created",
+            "type": "Type",
+            "version": "Version",
+            "url": "Url",
+            "publicId": "PublicId",
+            "tags": "Tags",
+            "orginalFileName": "OrginalFileName",
+            "bytes": "Bytes",
+            "width": "Width",
+            "eTag": "ETag",
+            "height": "Height"
+        }
+    }
+}

@@ -1,0 +1,93 @@
+
+<div>
+	<h2>
+		<span translate="reachoutApp.consumer.detail.title">Consumer</span>
+		{{consumer.id}}
+	</h2>
+	<div class="table-responsive">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th translate="entity.detail.field">Field</th>
+					<th translate="entity.detail.value">Value</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><span translate="">Image</span>
+					<!-- reachoutApp.notification.url --></td>
+					<td><span class="form-control-static"><img
+							src="{{consumer.url}}" alt="image"
+							style="width: 150px; height: 150px"
+							onError="this.src='http://www.personal.psu.edu/jul229/mini.jpg'"
+							style="width: 150px; height: 150px;" /></span></td>
+				</tr>
+				<tr>
+					<td><span translate="reachoutApp.consumer.name">Name</span></td>
+					<td><span class="form-control-static">{{consumer.name}}</span>
+					</td>
+				</tr>
+				<tr>
+					<td><span translate="reachoutApp.consumer.mobile">Mobile</span>
+					</td>
+					<td><span class="form-control-static">{{consumer.mobile}}</span>
+					</td>
+				</tr>
+				<tr>
+					<td><span translate="">Device Info</span>
+					</td>
+					<td><span class="form-control-static">Model : {{consumer.device_info.model}}</span>
+					    <span class="form-control-static">, sdk : {{consumer.device_info.sdk}}</span>
+					</td>
+				</tr>
+				<tr>
+					<td><span translate="reachoutApp.consumer.email">Email</span>
+					</td>
+					<td><span class="form-control-static">{{consumer.email}}</span>
+					</td>
+				</tr>
+				<tr>
+					<td><span translate="reachoutApp.consumer.status">Status</span>
+					</td>
+					<td><span class="form-control-static">{{consumer.status}}</span>
+					</td>
+				</tr>
+				<tr>
+					<td><span translate="reachoutApp.consumer.otp">Otp</span></td>
+					<td><span class="form-control-static">{{consumer.otp}}</span>
+					</td>
+				</tr>
+				<tr>
+					<td><span translate="reachoutApp.consumer.otpCount">OtpCount</span>
+					</td>
+					<td><span class="form-control-static">{{consumer.otpCount}}</span>
+					</td>
+				</tr>
+				<!-- tr>
+                <td>
+                    <span translate="reachoutApp.consumer.created">Created</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{consumer.created | date:'medium'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="reachoutApp.consumer.updated">Updated</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{consumer.updated | date:'medium'}}</span>
+                </td>
+            </tr> -->
+
+			</tbody>
+		</table>
+	</div>
+
+	<button type="submit" onclick="window.history.back()"
+		class="btn btn-primary btn-sm" style="background-color: #07079E;"
+		glyphicon glyphicon-arrow-left" style="color: #F5F5F5;">
+		</span>&nbsp;<span translate="entity.action.back" style="color: #F5F5F5;">
+			Back</span>
+	</button>
+</div>

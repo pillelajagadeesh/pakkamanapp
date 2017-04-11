@@ -1,0 +1,78 @@
+<style>
+ table { table-layout: fixed; }
+ table th, table td { overflow: hidden; }
+</style>
+<div>
+    <h2 translate="reachoutApp.pakkaApplicationSettings.home.title">Pakka Application Settings</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="pakka-application-settings.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="reachoutApp.pakkaApplicationSettings.home.createLabel">
+                        Create new Pakka Application Settings
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                  <!--   <th><span translate="global.field.id">ID</span></th> -->
+                    <th><span translate="reachoutApp.pakkaApplicationSettings.name">Name</span></th>
+                    <th><span translate="reachoutApp.pakkaApplicationSettings.description">Description</span></th>
+                    <th><span translate="reachoutApp.pakkaApplicationSettings.value">Value</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+           <tr ng-repeat="pakkaApplicationSettings in filtered =(vm.pakkaApplicationSettings | offset: currentPage*itemsPerPage | limitTo: itemsPerPage)|orderBy:sortType:sortReverse  track by pakkaApplicationSettings.id">                    <!-- <td><a ui-sref="pakka-application-settings-detail({id:pakkaApplicationSettings.id})">{{pakkaApplicationSettings.id}}</a></td> -->
+                    <td><a ui-sref="pakka-application-settings-detail({id:pakkaApplicationSettings.id})">{{pakkaApplicationSettings.name}}</a></td>
+                    <td>{{pakkaApplicationSettings.description}}</td>
+                    <td style="width: 30%">{{pakkaApplicationSettings.value}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                           <!--  <button type="submit"
+                                    ui-sref="pakka-application-settings-detail({id:pakkaApplicationSettings.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button> -->
+                            <button type="submit"
+                                    ui-sref="pakka-application-settings.edit({id:pakkaApplicationSettings.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="pakka-application-settings.delete({id:pakkaApplicationSettings.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <tfoot>
+			<td colspan="3">
+		<div class="pagination">
+			<ul class="pagination">
+				<li ng-class="DisablePrevPage()"><a href ng-click="prevPage()">
+						<< Prev</a></li>
+				<li ng-repeat="n in range()" ng-class="{active: n == currentPage}"
+					ng-click="setPage(n)"><a href="">{{n+1}}</a></li>
+				<li ng-class="DisableNextPage()"><a href ng-click="nextPage()">Next
+						>></a></li>
+			</ul>
+
+		</div>
+	</td>
+	</tfoot>
+</div>

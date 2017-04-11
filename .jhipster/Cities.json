@@ -1,0 +1,17 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "cityname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "citylocation",
+            "fieldType": "String"
+        }
+    ],
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "cities",
+    "pagination": "no"
+}

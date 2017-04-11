@@ -1,0 +1,43 @@
+{
+  "relationships": [],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "message",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "read",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "delivered",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "created",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "notificationId",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "senderId",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "receiverId",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160105112820",
+  "dto": "no",
+  "pagination": "no"
+}

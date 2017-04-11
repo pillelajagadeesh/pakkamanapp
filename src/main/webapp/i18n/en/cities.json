@@ -1,0 +1,23 @@
+{
+    "reachoutApp": {
+        "cities" : {
+            "home": {
+                "title": "Cities",
+                "createLabel": "Create a new Cities",
+                "createOrEditLabel": "Create or edit a Cities",
+                "search": "Search for Cities"
+            },
+            "created": "A new Cities is created with identifier {{ param }}",
+            "updated": "A Cities is updated with identifier {{ param }}",
+            "deleted": "A Cities is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Cities {{ id }}?"
+            },
+            "detail": {
+                "title": "Cities"
+            },
+            "cityname": "Cityname",
+            "citylocation": "Citylocation"
+        }
+    }
+}

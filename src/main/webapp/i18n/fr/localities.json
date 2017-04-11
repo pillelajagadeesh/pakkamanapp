@@ -1,0 +1,24 @@
+{
+    "reachoutApp": {
+        "localities" : {
+            "home": {
+                "title": "Localities",
+                "createLabel": "Créer un nouveau Localities",
+                "createOrEditLabel": "Créer ou éditer un Localities",
+                "search": "Recherche pour Localities"
+            },
+            "created": "Un nouveau Localities a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Localities avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Localities avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Localities {{ id }} ?"
+            },
+            "detail": {
+                "title": "Localities"
+            },
+            "localityname": "Localityname",
+            "localitylocation": "Localitylocation",
+            "cityname": "Cityname"
+        }
+    }
+}

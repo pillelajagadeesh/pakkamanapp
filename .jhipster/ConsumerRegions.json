@@ -1,0 +1,18 @@
+{
+  "relationships": [],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "consumerId",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "region",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160105112820",
+  "dto": "no",
+  "pagination": "no"
+}

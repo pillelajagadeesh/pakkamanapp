@@ -1,0 +1,150 @@
+
+<div>
+    <h2><span translate="reachoutApp.notification.detail.title">Notification</span> {{notification.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="category">Category</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{notification.categoryId}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="reachoutApp.notification.title">Title</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{notification.title}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="reachoutApp.notification.description">Description</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{notification.description}}</span>
+                </td>
+            </tr>
+             <tr>
+                <td>
+                    <span translate="">Approved By</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{notification.approvedBy}}</span>
+                </td>
+            </tr>
+             <tr>
+                <td>
+                    <span translate="">Approved Time</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{notification.approvedTime | date:'medium'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="reachoutApp.notification.validFrom">ValidFrom</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{notification.validFrom | date:'medium'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="reachoutApp.notification.validTo">ValidTo</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{notification.validTo | date:'medium'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="">Posted On</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{notification.notificationDate | date:'medium'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="reachoutApp.notification.active">Active</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{notification.active}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="reachoutApp.notification.created">Created</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{notification.notificationDate | date:'medium'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="reachoutApp.notification.updated">Updated</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{notification.lastUpdate | date:'medium'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="reachoutApp.notification.offensive">Offensive</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{notification.offensive}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="reachoutApp.notification.url">Url</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{notification.imageUrl}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="reachoutApp.notification.consumerId">ConsumerId</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{notification.consumerId}}</span>
+                </td>
+            </tr>
+             <tr>
+                <td>
+                    <span>Image</span>
+                </td>
+               <td>
+                    	<div id="slides_control" style="width: 250px;">
+							<carousel interval="myInterval"> <slide
+								ng-repeat="slide in notification.imageUrls"> <a
+								ng-href="{{slide|| 'http://res.cloudinary.com/mist-minds/image/upload/v1480672656/bbklfcl27gmijyxrqiag.jpg'}}"
+								target="_Blank" style="width: 70px; height: 70px"><img
+								ng-src="{{slide}}"></a>
+							<div class="carousel-caption"></div>
+							</slide> </carousel>
+						</div>
+					</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-primary btn-sm" style="background-color: #07079E;">
+        <span class="glyphicon glyphicon-arrow-left" style="color: #F5F5F5;"></span>&nbsp;<span translate="entity.action.back" style="color: #F5F5F5;"> Back</span>
+    </button>
+</div>

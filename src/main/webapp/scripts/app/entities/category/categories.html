@@ -1,0 +1,94 @@
+<!-- <style>
+ table { table-layout: fixed; }
+ table th, table td { overflow: hidden; }
+</style> -->
+
+<div>
+    <h2 translate="reachoutApp.category.home.title">Categories</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="category.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="reachoutApp.category.home.createLabel">
+                        Create new Category
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <!-- <th><span translate="global.field.id">ID</span></th> -->
+                    <th><span translate="reachoutApp.category.name">Name</span></th>
+                   <!--  <th><span style="width: 20%" translate="reachoutApp.category.imageUrl">Image Url</span></th>
+                    <th><span style="width: 20%" translate="reachoutApp.category.markerPins">Marker Pins</span></th> -->
+                    <th><span translate="reachoutApp.category.description">Description</span></th>
+                    <!-- <th><span translate="reachoutApp.category.parentId">Parent Id</span></th>
+                    <th><span translate="reachoutApp.category.created">Created</span></th>
+                    <th><span translate="reachoutApp.category.deleted">Deleted</span></th>
+                    <th><span translate="reachoutApp.category.lastUpdate">Last Update</span></th>
+                    <th><span translate="reachoutApp.category.version">Version</span></th> -->
+                    <!-- <th></th>
+                    <th></th> -->
+                </tr>
+            </thead>
+            <tbody>
+               <tr ng-repeat="category in filtered =(vm.categories | offset: currentPage*itemsPerPage | limitTo: itemsPerPage)|orderBy:sortType:sortReverse  track by category.id">
+                    <!-- <td><a ui-sref="category-detail({id:category.id})">{{category.id}}</a></td> -->
+                    <td><a ui-sref="category-detail({id:category.id})">{{category.name}}</a></td>
+                    <!-- <td>{{category.imageUrl}}</td>
+                    <td>{{category.markerPins}}</td> -->
+                    <td>{{category.description}}</td>
+                    <!-- <td>{{category.parentId}}</td>
+                    <td>{{category.created | date:'medium'}}</td>
+                    <td>{{category.deleted | date:'medium'}}</td>
+                    <td>{{category.lastUpdate | date:'medium'}}</td>
+                    <td>{{category.version}}</td> -->
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <!-- <button type="submit"
+                                    ui-sref="category-detail({id:category.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button> -->
+                            
+                            <button type="submit"
+                                    ui-sref="category.edit({id:category.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="category.delete({id:category.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+     <tfoot>
+			<td colspan="3">
+		<div class="pagination">
+			<ul class="pagination">
+				<li ng-class="DisablePrevPage()"><a href ng-click="prevPage()">
+						<< Prev</a></li>
+				<li ng-repeat="n in range()" ng-class="{active: n == currentPage}"
+					ng-click="setPage(n)"><a href="">{{n+1}}</a></li>
+				<li ng-class="DisableNextPage()"><a href ng-click="nextPage()">Next
+						>></a></li>
+			</ul>
+
+		</div>
+	</td>
+	</tfoot>
+</div>

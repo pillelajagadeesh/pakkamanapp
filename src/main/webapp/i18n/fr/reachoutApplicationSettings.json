@@ -1,0 +1,24 @@
+{
+    "reachoutApp": {
+        "reachoutApplicationSettings" : {
+            "home": {
+                "title": "ReachoutApplicationSettingss",
+                "createLabel": "Créer un nouveau ReachoutApplicationSettings",
+                "createOrEditLabel": "Créer ou éditer un ReachoutApplicationSettings"
+            },
+            "created": "Un nouveau ReachoutApplicationSettings a été créé avec l'identifiant {{ param }}",
+            "updated": "Le ReachoutApplicationSettings avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le ReachoutApplicationSettings avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le ReachoutApplicationSettings {{ id }} ?"
+            },
+            "detail": {
+                "title": "ReachoutApplicationSettings"
+            },
+            "name": "Name",
+            "description": "Description",
+            "value": "Value"
+        }
+    }
+}
+

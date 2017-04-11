@@ -1,0 +1,26 @@
+{
+  "generator-jhipster": {
+    "baseName": "reachout",
+    "packageName": "com.mistminds",
+    "packageFolder": "com/mistminds",
+    "authenticationType": "xauth",
+    "hibernateCache": "no",
+    "clusteredHttpSession": "hazelcast",
+    "websocket": "spring-websocket",
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "searchEngine": "no",
+    "useSass": true,
+    "buildTool": "gradle",
+    "frontendBuilder": "grunt",
+    "enableTranslation": true,
+    "enableSocialSignIn": false,
+    "rememberMeKey": "f295808095c814890e4aad6d1c1dfb67c7235328",
+    "testFrameworks": [
+      "gatling",
+      "cucumber",
+      "protractor"
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+    
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h3 class="modal-title" id="myConsumerLabel" translate="">Create or edit a Provider</h3>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <!-- <label for="id" translate="global.field.id">ID</label> -->
+            <h4><span translate="reachoutApp.provider.detail.title">Provider Id</span> {{provider.id}}</h4>
+        </div>
+         <div class="form-group">
+            <label class="control-label" translate="" for="field_name">Business Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="provider.name"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="" for="field_mobile">Mobile</label>
+            <input type="text" class="form-control" name="mobile" id="field_mobile"
+                    ng-model="provider.mobile"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                    ng-model="provider.email"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="" for="field_otp">Address</label>
+            <input type="text" class="form-control" name="otp" id="field_otp"
+                    ng-model="provider.address"
+                     />
+        </div>
+        
+        <div class="form-group">
+            <label class="control-label" translate="" for="field_monthly_free_credits">Monthly Free Credits</label>
+            <input type="text" class="form-control" name="monthly free credits" id="field_monthly_free_credits"
+                    ng-model="provider.monthly_free_credits"/>
+        </div>
+        
+        <div class="form-group">
+            <label class="control-label" translate="" for="field_wallet_credits">Wallet Credits</label>
+            <input type="text" class="form-control" name="wallet credits" id="field_wallet_credits"
+                    ng-model="provider.wallet_credits"/>
+        </div>
+        
+        <!-- <div class="form-group">
+            <label class="control-label" translate="" for="field_otpCount">OtpCount</label>
+            <input type="number" class="form-control" name="otpCount" id="field_otpCount"
+                    ng-model="consumer.otpCount"
+                     />
+        </div> -->
+       <!--  <div class="form-group">
+            <label class="control-label" translate="reachoutApp.consumer.created" for="field_created">Created</label>
+            <input id="field_created" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}" ng-model="consumer.created" is-open="datePickerForCreated.status.opened"
+            />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForCreatedOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </div> -->
+        <!-- <div class="form-group">
+            <label class="control-label" translate="" for="field_updated">Updated</label>
+            <input id="field_updated" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}" ng-model="provider.updated" is-open="datePickerForUpdated.status.opened"
+            />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForUpdatedOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </div> -->
+       
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" style="background-color: #07079E;" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle" style="color: #F5F5F5;"></span>&nbsp;<span translate="entity.action.cancel" style="color: #F5F5F5;">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary" style="background-color: #07079E;">
+            <span class="glyphicon glyphicon-save" style="color: #F5F5F5;"></span>&nbsp;<span translate="entity.action.save" style="color: #F5F5F5;">Save</span>
+        </button>
+    </div>
+</form>

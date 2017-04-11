@@ -1,0 +1,78 @@
+
+<div>
+    <h2><span translate="reachoutApp.privateMessage.detail.title">PrivateMessage</span> {{privateMessage.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="reachoutApp.privateMessage.message">Message</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{privateMessage.message}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="reachoutApp.privateMessage.read">Read</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{privateMessage.read}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="reachoutApp.privateMessage.delivered">Delivered</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{privateMessage.delivered}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="reachoutApp.privateMessage.created">Created</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{privateMessage.created | date:'medium'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="reachoutApp.privateMessage.notificationId">NotificationId</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{privateMessage.notificationId}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="reachoutApp.privateMessage.senderId">SenderId</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{privateMessage.senderId}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="reachoutApp.privateMessage.receiverId">ReceiverId</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{privateMessage.receiverId}}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

@@ -1,0 +1,8 @@
+jhipster-dev-mongodb:
+  container_name: reachout-dev-mongodb
+  image: mongo:3.0.7
+  # volumes:
+  # - ~/volumes/jhipster/reachout/dev-mongodb/:/data/db/
+  ports:
+  - "27017:27017"
+

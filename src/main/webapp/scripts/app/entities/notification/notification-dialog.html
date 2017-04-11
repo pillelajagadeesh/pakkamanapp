@@ -1,0 +1,162 @@
+<<style>
+<!--
+.form-group-val label.control-label {
+    font-size: 14px;
+    line-height: 1.07142857;
+    color: #009688;
+    font-weight: 400;
+    margin: 30px 0 0 0;
+}
+
+-->
+</style>
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myNotificationLabel" translate="reachoutApp.notification.home.createOrEditLabel">Create or edit a Notification</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="notification.id" readonly />
+        </div>
+        <div class="form-group-val">
+            <label class="control-label">Main Category</label>
+           <!--  <input type="text" class="form-control" name="category" id="field_category"
+                    ng-model="notification.category"
+                     /> -->
+                     <select style="margin-left: 100px;" ng-change="selectedItemChanged()"
+                     ng-model="selectedItem"> 
+				<option value="">Select category<b class="caret"></b></option>
+				<option ng-repeat="category in details" value="{{category.id}}" >{{category.name}}</option>
+			</select>
+        </div>
+        
+        <div class="form-group-val">
+            <label class="control-label" translate="category" for="field_category">Sub Category</label>
+                     <select style="margin-left: 138px;" name="category" id="field_category"
+                    ng-model="notification.category" >
+				<option value="">Choose a sub category<b class="caret"></b></option>
+				<option ng-repeat="subcategory in CategoryDetails" value="{{subcategory.id}}" >{{subcategory.name}}</option>
+				
+			</select>
+        </div>        
+        <div class="form-group">
+            <label class="control-label" translate="reachoutApp.notification.title" for="field_title">Title</label>
+            <input type="text" class="form-control" name="title" id="field_title"
+                    ng-model="notification.title"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="reachoutApp.notification.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="notification.description"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="reachoutApp.notification.validFrom" for="field_validFrom">ValidFrom</label>
+            <input id="field_validFrom" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}" ng-model="notification.validFrom" is-open="datePickerForValidFrom.status.opened"
+            />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForValidFromOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="reachoutApp.notification.validTo" for="field_validTo">ValidTo</label>
+            <input id="field_validTo" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}" ng-model="notification.validTo" is-open="datePickerForValidTo.status.opened"
+            />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForValidToOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </div>
+        <!-- <div class="form-group">
+            <label class="control-label" translate="reachoutApp.notification.active" for="field_active">Active</label>
+            <input type="checkbox" class="checkboxtext" name="active" id="field_active"
+                    ng-model="notification.active" style="position: absolute; margin-top: 2%; margin-left: 8%; zoom: 2.5;"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="reachoutApp.notification.created" for="field_created">Created</label>
+            <input id="field_created" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}"  ng-model="notification.notificationDate"  is-open="datePickerForCreated.status.opened"
+           ng-disabled="true" readonly="true" />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForCreatedOpen($event)" ng-disabled="true" readonly="true"><i class="glyphicon glyphicon-calendar" ng-disabled="true" readonly="true"></i></button>
+            </span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="reachoutApp.notification.updated" for="field_updated">Updated</label>
+            <input id="field_updated" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}" ng-model="notification.lastUpdate" is-open="datePickerForUpdated.status.opened"
+           ng-disabled="true" readonly="true" />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForUpdatedOpen($event)" ng-disabled="true" readonly="true"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="reachoutApp.notification.offensive" for="field_offensive">Offensive</label>
+            <input type="text" class="form-control" name="offensive" id="field_offensive"
+                    ng-model="notification.offensive"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="reachoutApp.notification.url" for="field_url">Url</label>
+            <input type="text" class="form-control" name="url" id="field_url"
+                    ng-model="notification.imageUrl"
+                     />
+        </div> -->
+        
+        <div class="form-group">
+            <label class="control-label" translate="reachoutApp.notification.mrpPrice" for="field_mrpPrice">mrpPrice</label>
+            <input type="text" class="form-control" name="mrpPrice" id="field_mrpPrice"
+                    ng-model="notification.mrpPrice"
+                     />
+        </div>
+        
+        <div class="form-group">
+            <label class="control-label" translate="reachoutApp.notification.offerPrice" for="field_offerPrice">offerPrice</label>
+            <input type="text" class="form-control" name="offerPrice" id="field_offerPrice"
+                    ng-model="notification.offerPrice"
+                     />
+                     
+        </div>
+        
+        <div class="form-group">
+            <label class="control-label" translate="reachoutApp.notification.hotLink" for="field_hotLink">hotLink</label>
+            <input type="text" class="form-control" name="hotLink" id="field_hotLink"
+                    ng-model="notification.hotLink"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="reachoutApp.notification.radius" for="field_radius">Radius</label>
+            <input type="text" class="form-control" name="radius" id="field_radius" 
+                    ng-model="notification.radius"
+                     />
+        </div>
+        
+          <div class="form-group">
+            <label class="control-label" translate="reachoutApp.notification.image" for="field_image">Image</label>
+            <input type="text" class="form-control" name="image" id="field_image"
+                    ng-model="notification.image"
+                     />
+        </div>
+        
+                <div class="form-group">
+            <label class="control-label" translate="reachoutApp.notification.consumerId" for="field_consumerId">ConsumerId</label>
+            <input type="text" class="form-control" name="consumerId" id="field_consumerId"
+                    ng-model="notification.consumerId"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" style="background-color: #07079E;" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle" style="color: #F5F5F5;"></span>&nbsp;<span translate="entity.action.cancel" style="color: #F5F5F5;">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="" class="btn btn-primary" style="background-color: #07079E;">
+            <span class="glyphicon glyphicon-save" style="color: #F5F5F5;"></span>&nbsp;<span translate="entity.action.save" style="color: #F5F5F5;">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,88 @@
+{
+  "relationships": [],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "consumerId",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "signature",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "format",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "resourceType",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "secureUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "created",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "type",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 8,
+      "fieldName": "version",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 9,
+      "fieldName": "url",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 10,
+      "fieldName": "publicId",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 11,
+      "fieldName": "tags",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 12,
+      "fieldName": "orginalFileName",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 13,
+      "fieldName": "bytes",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldId": 14,
+      "fieldName": "width",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldId": 15,
+      "fieldName": "eTag",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 16,
+      "fieldName": "height",
+      "fieldType": "Integer"
+    }
+  ],
+  "changelogDate": "20160105112820",
+  "dto": "no",
+  "pagination": "no"
+}

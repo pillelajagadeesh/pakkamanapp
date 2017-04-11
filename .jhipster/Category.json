@@ -1,0 +1,45 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "imageUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "markerPins",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "parentId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "created",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "deleted",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lastUpdate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "version",
+            "fieldType": "Integer"
+        }
+    ],
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "category",
+    "pagination": "no"
+}

@@ -1,0 +1,27 @@
+{
+    "reachoutApp": {
+        "privateMessage" : {
+            "home": {
+                "title": "PrivateMessages",
+                "createLabel": "Create a new PrivateMessage",
+                "createOrEditLabel": "Create or edit a PrivateMessage"
+            },
+            "created": "A new PrivateMessage is created with identifier {{ param }}",
+            "updated": "A PrivateMessage is updated with identifier {{ param }}",
+            "deleted": "A PrivateMessage is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete PrivateMessage {{ id }}?"
+            },
+            "detail": {
+                "title": "PrivateMessage"
+            },
+            "message": "Message",
+            "read": "Read",
+            "delivered": "Delivered",
+            "created": "Created",
+            "notificationId": "NotificationId",
+            "senderId": "SenderId",
+            "receiverId": "ReceiverId"
+        }
+    }
+}

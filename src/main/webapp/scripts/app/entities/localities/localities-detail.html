@@ -1,0 +1,26 @@
+
+<div>
+    <h2><span translate="reachoutApp.localities.detail.title">Localities</span> {{vm.localities.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="reachoutApp.localities.localityname">Localityname</span></dt>
+        <dd>
+            <span>{{vm.localities.localityname}}</span>
+        </dd>
+        <dt><span translate="reachoutApp.localities.localitylocation">Localitylocation</span></dt>
+        <dd>
+            <span>{{vm.localities.localitylocation}}</span>
+        </dd>
+        <dt><span translate="reachoutApp.localities.cityname">Cityname</span></dt>
+        <dd>
+            <span>{{vm.localities.cityname}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

@@ -1,0 +1,28 @@
+{
+  "relationships": [],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "comment",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "likeOrDislike",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "notificationId",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "consumerId",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160105112820",
+  "dto": "no",
+  "pagination": "no"
+}

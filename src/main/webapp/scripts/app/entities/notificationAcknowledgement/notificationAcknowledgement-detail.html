@@ -1,0 +1,54 @@
+
+<div>
+    <h2><span translate="reachoutApp.notificationAcknowledgement.detail.title">NotificationAcknowledgement</span> {{notificationAcknowledgement.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="reachoutApp.notificationAcknowledgement.read">Read</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{notificationAcknowledgement.read}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="reachoutApp.notificationAcknowledgement.consumerId">ConsumerId</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{notificationAcknowledgement.consumerId}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="reachoutApp.notificationAcknowledgement.notificationId">NotificationId</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{notificationAcknowledgement.notificationId}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="reachoutApp.notificationAcknowledgement.delivered">Delivered</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{notificationAcknowledgement.delivered}}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

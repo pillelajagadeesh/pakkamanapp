@@ -1,0 +1,32 @@
+{
+    "reachoutApp": {
+        "provider" : {
+            "home": {
+                "title": "Providers",
+                "createLabel": "Create a new Provider",
+                "createOrEditLabel": "Create or edit a Provider"
+            },
+            "created": "A new Provider is created with identifier {{ param }}",
+            "updated": "A Provider is updated with identifier {{ param }}",
+            "blocked": "A Provider is blocked with identifier {{ param }}",
+            "activated": "A Provider is activated with identifier {{ param }}",
+            "credited": "A Provider is credited with identifier {{ param }}",
+            "deleted": "A Consumer is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Consumer {{ id }}?"
+            },
+             "add": {
+                "question": "Are you sure you want to add promo credit for  this provider {{ id }}?"
+            },
+            "detail": {
+                "title": "Provider"
+            },
+            "mobile": "Mobile",
+            "email": "Email",
+            "address": "Address",
+            "latitude": "Latitude",
+            "longitude": "Longitude",
+            "name": "Name"
+        }
+    }
+}

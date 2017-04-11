@@ -1,0 +1,25 @@
+{
+    "reachoutApp": {
+        "deviceInfo" : {
+            "home": {
+                "title": "DeviceInfos",
+                "createLabel": "Create a new DeviceInfo",
+                "createOrEditLabel": "Create or edit a DeviceInfo"
+            },
+            "created": "A new DeviceInfo is created with identifier {{ param }}",
+            "updated": "A DeviceInfo is updated with identifier {{ param }}",
+            "deleted": "A DeviceInfo is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete DeviceInfo {{ id }}?"
+            },
+            "detail": {
+                "title": "DeviceInfo"
+            },
+            "device": "Device",
+            "sdk": "Sdk",
+            "model": "Model",
+            "product": "Product",
+            "consumerId": "ConsumerId"
+        }
+    }
+}

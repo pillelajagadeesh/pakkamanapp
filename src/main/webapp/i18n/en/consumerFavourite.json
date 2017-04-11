@@ -1,0 +1,24 @@
+{
+    "reachoutApp": {
+        "consumerFavourite" : {
+            "home": {
+                "title": "ConsumerFavourites",
+                "createLabel": "Create a new ConsumerFavourite",
+                "createOrEditLabel": "Create or edit a ConsumerFavourite"
+            },
+            "created": "A new ConsumerFavourite is created with identifier {{ param }}",
+            "updated": "A ConsumerFavourite is updated with identifier {{ param }}",
+            "deleted": "A ConsumerFavourite is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete ConsumerFavourite {{ id }}?"
+            },
+            "detail": {
+                "title": "ConsumerFavourite"
+            },
+            "consumerId": "ConsumerId",
+            "providerId": "ProviderId",
+            "created": "Created",
+            "updated": "Updated"
+        }
+    }
+}

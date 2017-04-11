@@ -1,0 +1,74 @@
+# ===================================================================
+# Spring Boot configuration for the "prod" profile.
+#
+# This configuration overrides the application.yml file.
+# ===================================================================
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+spring:
+    profiles:
+        active: prod
+    devtools:
+        restart:
+            enabled: false
+        livereload:
+            enabled: false
+    data:
+        mongodb:
+           uri: mongodb://mistminds:bangalore100@ds023684.mlab.com:23684/reachout_stage
+           host: ds023684.mlab.com
+           port: 23684
+           database: reachout_stage
+           userName: mistminds
+           password: bangalore100
+    mail:
+         host: smtp.gmail.com
+         port: 25
+         user: jitesh.chouhan@mistminds.com
+         password: 0924081041
+         protocol: smtp
+         tls: true
+         auth: true
+         from: jiteshsinghchaouhan487@gmail.com
+    thymeleaf:
+        cache: true
+
+liquibase:
+    contexts: prod
+
+server:
+    port: 23684
+    compression:
+        enabled: true
+        mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
+
+# ===================================================================
+# JHipster specific properties
+# ===================================================================
+
+jhipster:
+    http:
+        cache: # Used by the CachingHttpHeadersFilter
+            timeToLiveInDays: 31
+    cache: # Hibernate 2nd level cache, used by CacheConfiguration
+        timeToLiveSeconds: 3600
+        hazelcast:
+            backupCount: 1
+    mail: # specific JHipster mail property, for standard properties see MailProperties
+        from: reachout@ds039155.mongolab.com
+    metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
+        jmx.enabled: true
+        spark:
+            enabled: false
+            host: ds023684.mlab.com
+            port: 9999
+        graphite:
+            enabled: false
+            host: ds023684.mlab.com
+            port: 2003
+            prefix: reachout

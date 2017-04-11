@@ -1,0 +1,33 @@
+{
+  "relationships": [],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "device",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "sdk",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "model",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "product",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "consumerId",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160105112820",
+  "dto": "no",
+  "pagination": "no"
+}

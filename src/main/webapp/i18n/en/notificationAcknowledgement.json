@@ -1,0 +1,24 @@
+{
+    "reachoutApp": {
+        "notificationAcknowledgement" : {
+            "home": {
+                "title": "NotificationAcknowledgements",
+                "createLabel": "Create a new NotificationAcknowledgement",
+                "createOrEditLabel": "Create or edit a NotificationAcknowledgement"
+            },
+            "created": "A new NotificationAcknowledgement is created with identifier {{ param }}",
+            "updated": "A NotificationAcknowledgement is updated with identifier {{ param }}",
+            "deleted": "A NotificationAcknowledgement is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete NotificationAcknowledgement {{ id }}?"
+            },
+            "detail": {
+                "title": "NotificationAcknowledgement"
+            },
+            "read": "Read",
+            "consumerId": "ConsumerId",
+            "notificationId": "NotificationId",
+            "delivered": "Delivered"
+        }
+    }
+}

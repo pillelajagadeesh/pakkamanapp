@@ -1,0 +1,31 @@
+{
+    "reachoutApp": {
+        "consumer" : {
+            "home": {
+                "title": "Consumers",
+                "createLabel": "Create a new Consumer",
+                "createOrEditLabel": "Create or edit a Consumer"
+            },
+            "created": "A new Consumer is created with identifier {{ param }}",
+            "updated": "A Consumer is updated with identifier {{ param }}",
+            "deleted": "A Consumer is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Consumer {{ id }}?"
+            },
+            "detail": {
+                "title": "Consumer"
+            },
+            "mobile": "Mobile",
+            "email": "Email",
+            "status": "Status",
+            "otp": "Otp",
+            "otpCount": "OtpCount",
+            "created": "Created",
+            "updated": "Updated",
+            "name": "Name",
+            "monthly_free_credits": "Monthly_free_credits",
+            "wallet_credits": "Wallet_credits",
+            "eleigible_for_promo_credit": "Eleigible_for_promo_credit"
+        }
+    }
+}

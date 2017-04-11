@@ -1,0 +1,18 @@
+<form name="blockForm" ng-submit="confirmBlock(provider.id,provider.eleigible_for_promo_credit)">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" translate="">Confirm promo operation</h4>
+    </div>
+    <div class="modal-body">
+        <p translate="reachoutApp.provider.add.question" translate-values="{id: '{{provider.id}}'}">Are you sure want add Promo credit ?</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-sm"  style="background-color: #07079E;" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle" style="color: #F5F5F5;"></span>&nbsp;<span translate="entity.action.cancel" style="color: #F5F5F5;">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="blockForm.$invalid" class="btn btn-primary btn-sm" style="background-color: #07079E;">
+            <span class="glyphicon glyphicon-ok" style="color: #F5F5F5;"></span>&nbsp;<span translate="" style="color: #F5F5F5;">Yes</span>
+        </button>
+    </div>
+</form>
